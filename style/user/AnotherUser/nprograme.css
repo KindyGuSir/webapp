@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* 弹框样式 */
+/* title */
+.alertBox{
+	width: 400px;
+	height: auto;
+	border-radius: 4px;
+	background: #fff;
+}
+.alert-tit{
+	width: 100%;
+	height: 37px;
+	line-height: 37px;
+	background: #f2f6fd;
+}
+.alert-tit h3{
+	font-weight: normal;
+	font-size: 16px;
+	float: left;
+	padding-left: 20px;
+}
+.alert-left .addall,.alert-left .moveall{
+	font-size: 12px;
+	color: #6192D6;
+}
+.alert-left .addall:hover,.alert-left .moveall:hover{
+	text-decoration: none;
+}
+.alert-tit img{
+	float: right;
+	vertical-align: middle;
+	margin: 10px 16px 0 0;
+	cursor: pointer;
+}
+
+/* content */
+.protab{
+	width: 100%;
+}
+.alert-con{
+	font-size: 12px;
+	height: auto;
+	padding: 22px;
+}
+.protab p{
+	line-height: 26px;
+	height: 26px;
+}
+.protab input,.protab select,.protab textarea{
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	background: transparent;
+}
+.protab div:nth-child(1){
+	float: left;
+	width: 45%;
+}
+.protab div:nth-child(1) input{
+	padding-left: 5px;
+	width: 100%;
+	height: 28px;
+	background: transparent;
+}
+.protab div:nth-child(2){
+	float: right;
+	width: 45%;
+}
+.protab div:nth-child(2) select{
+	padding-left: 5px;
+	width: 100%;
+	height: 28px;
+	background: transparent;
+}
+/* 隐藏input */
+.protab #hidep{
+	height: 46px;
+}
+.protab #hidep input{
+	width: 70px;
+	margin: 10px 0;
+	padding-left: 5px;
+	height: 26px;
+}
+.protab #hidep input:nth-child(1){
+	margin-right: 15px;
+}
+.protab div:nth-child(3){
+	float: left;
+	width: 100%;
+}
+.protab div:nth-child(3) textarea{
+	width: 100%;
+	padding: 5px;
+	height: 100px;
+}
+.protab div:nth-child(3) textarea + p{
+	text-align: right;
+}
+.protab div:nth-child(4){
+	float: right;
+	margin-top: 10px;
+}
+
+.protab div:nth-child(4) button{
+	background: #00a2ca;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 0 20px;
+	height: 27px;
+	line-height: 27px;
+}
+.protab div:nth-child(4) a{
+	box-sizing: border-box;
+	background: #fff;
+	display: inline-block;
+	border-radius: 4px;
+	border: 1px solid #cde1ff;
+	padding: 0 20px;
+	height: 27px;
+	line-height: 27px;
+}

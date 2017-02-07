@@ -1,0 +1,156 @@
+@charset 'utf-8';
+body{
+	background: #E9E4EA;
+}
+/* left */
+.left{
+	position: fixed;
+	left: 0;
+	top: 80px;
+	width: 240px;
+	height: 100%;
+	background: #292D38;
+}
+
+.logoimg{
+	padding-top: 38px;
+	padding-left: 18px;
+}
+.info{
+	font-size: 22px;
+	color: #B4E0FF;
+	position: absolute;
+	right: 18px;
+	top: 26px;
+}
+.tit{
+	color: #fff;
+	font-size: 20px;
+}
+.tit{
+	font-weight: normal;
+	padding-left: 20px;
+	padding-top: 34px;
+}
+.left-navs li{
+	height: 38px;
+	width: 240px;
+	line-height: 38px;
+	cursor: pointer;
+}
+.left-navs li span{
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+	width: 100%;
+	height: 100%;
+	padding-left: 30px;
+	box-sizing: border-box;
+	border-left: 3px solid transparent;
+}
+.left-navs li span i{
+	padding-right: 8px;
+}
+.nav1{
+	display: none;
+}
+.nav{
+	margin-top: 34px;
+}
+.left-navs .active{
+	background-color: #1C1F28;
+	border-left: 3px solid #6192D6;
+	color: #6192D6;
+}
+
+/* top 117*/
+.top{
+	position: fixed;
+	height: 80px;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-width: 760px;
+	background: #fff;
+	z-index: 99999;
+}
+.logo{
+	float: left;
+	width: 240px;
+	height: 80px;
+	background:#fff;
+	position: relative;
+	border-bottom: 1px solid #95C1FD;
+}
+.top-nav{
+	float: left;
+	overflow: auto;
+	height: 80px;
+}
+.top-nav li{
+	width: 136px;
+	height: 51px;
+	line-height: 52px;
+	text-align: center;
+	float: left;
+	margin-top: 13px;
+	border-right: 1px solid #F4F4F4;
+}
+.top-nav li a{
+	color: #505050;
+	font-size: 18px;
+}
+.top-nav .top-select a{
+	color: #6192D6;
+}
+.singleout{
+	position: relative;
+	height: 80px;
+	line-height: 80px;
+	float: right;
+	margin-right: 50px;
+	font-size: 14px;
+	color: #8F8F8F;
+
+}
+.selectbtn{
+	position: absolute;
+	top: 40%;
+	left: 90%;
+	margin-left: 20px;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+}
+.singleOutBox{
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #ccc;
+	background: #fff;
+	display: none;
+}
+.singleOutBox div{
+	line-height: 26px;
+	text-align: center;
+}
+.singleOutBox a{
+	color: #666;
+}
+.singleOutBox .outuser{
+	color: #f66666;
+}
+
+/* right */
+.right{
+	position: fixed;
+	left: 270px;
+	top: 80px;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	border-radius: 6px;
+	z-index: 1;
+}

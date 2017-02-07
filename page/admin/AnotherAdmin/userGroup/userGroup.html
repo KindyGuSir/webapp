@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>设备控制</title>
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/global/top-btm.css">
+	<link rel="stylesheet" href="../../../../style/admin/userGroup.css">
+</head>
+<body>
+		<!-- top盒子 -->
+		<div class="top clearfix">
+			<div class="shy">
+				<div class="logo">
+					<img class="logoimg" src="../../../../imgs/tplogo.png" alt="">
+					<h1 class="tit">互动视窗系统</h1>
+				</div>
+				<div class="top-con">
+					<div class="top-tit">
+						<ul class="prom-title">
+							<li>
+								<a href="../userGroup/userGroup.html">人员分组</a>
+							</li>
+							<li>
+								<a href="../id/id.html">公共角色</a>
+							</li>
+							<li>
+								<a href="../user/user.html">人员管理</a>
+							</li>
+							<li>
+								<a href="../deviceGroup/deviceGroup.html">设备分组</a>
+							</li>
+							<li>
+								<a href="../deviceManagement/deviceManagement.html">设备配置</a>
+							</li>
+						</ul>
+					</div>
+					<div class="singleout">
+						当前用户:
+						<span>
+							管理员
+							<span class="selectybtn"></span>
+						</span>
+						<div id="singleOutBox" class="singleOutBox">
+							<div>
+								<a href="javascript:">个人资料</a>
+							</div>
+							<div>
+								<a href="javascript:">帮助中心</a>
+							</div>
+							<div>
+								<a class="outuser" href="javascript:">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- bottom盒子 -->
+		<div class="bottom-box">
+			<div class="gwidth clearfix">
+				<div class="group-l">
+					<div class="group-l-tit">用户分组</div>
+					<!-- 已有组 -->
+					<ul id="group-se"></ul>
+				</div>
+				<!-- 二级分组 end -->
+
+				<div class="group-r">
+					<div class="group-list clearfix" >
+						<a id="batchEdit" class="ugid1" href="javascript:">批量修改</a>
+						<a id="del" href="javascript:">删除</a>
+						<div class="suname">
+							<input id="search-prople" type="text" placeholder="请输入姓名或同户名进行搜索">
+							<a href="javascript:"></a>
+						</div>
+					</div>
+					<div id ="data_num" class="senum">
+						人员列表: （已选择 <b id="senum">0</b>
+						条数据）
+					</div>
+					<div class="tb">
+						<table id="g-tab"></table>
+					</div>
+
+					<!-- 分页 -->
+					<div id ="pagebar" style="text-align: center;width:100%" >
+						<ul class="pagination" id="pagination2"></ul>
+					</div>
+
+				</div>
+				<!-- group-r -->
+			</div>
+			<!-- gwidth - end -->
+			<input type="hidden" value="${pageContext.request.contextPath}" id="root_path">
+			<input type="hidden"  id="id_flag">
+			<input type="hidden"  id="totalPage">
+			<input type="hidden"  id="currentPage">
+	</div>
+
+
+</body>
+</html>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script>
+		//单击显示隐藏 userbox
+		$(".selectybtn").bind("click",function(){
+			if($("#singleOutBox").is(":hidden")){
+				$(".selectybtn").css({"background-position":"0% 100%"});
+				$("#singleOutBox").show();
+			}else{
+				$(".selectybtn").css({"background-position":"0% 0%"});
+				$("#singleOutBox").hide();
+			};
+		});
+
+</script>

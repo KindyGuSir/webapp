@@ -1,0 +1,50 @@
+/* 创建用户 */
+body{min-width: 740px}
+
+form{
+	padding-left: 33px;
+	padding-top: 54px;
+	font-size: 14px;
+	color: #4F4F4F;
+}
+input[type='text'],input[type='password']{
+	width: 37%;
+	height: 32px;
+	border: 1px solid #d9d9d9;
+	background: #fff;
+	padding-left: 15px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	margin-left: 20px;
+	font-size: 12px;
+}
+input[type='radio']{
+	margin-left: 10px;
+}
+.sex label{
+	margin-left: 20px;
+}
+form .pswd, form .sex, form .phone, form .email{
+	padding-left: 20px;
+	margin-top: 20px;
+}
+form .bind{
+	margin-top: 20px;
+	padding-right: 20px;
+}
+.bind-cont{
+	width: 500px;
+	height: 200px;
+	border: 1px solid #666;
+	margin-left: 80px;
+	padding: 10px;
+	font-size: 14px;
+	color: #666666;
+}
+.bind-cont p{
+	width: 124px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+}

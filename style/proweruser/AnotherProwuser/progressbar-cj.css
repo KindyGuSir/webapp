@@ -1,0 +1,43 @@
+@charset "utf-8";
+.progressbar{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	position: relative;
+}
+.barline {
+	float: left;
+	width: 200px;
+	background: #FFF;
+	border: 2px solid #6192D6;
+	height: 12px;
+	display: inline-block;
+	border-radius: 8px;
+	/* display: none; */
+	position: absolute;
+	right: 200px;
+	bottom: 60px;
+}
+.barline #percent {
+	position: absolute;
+	left: 0px;
+	top: -30px;
+	display: inline-block;
+	color: #6192D6;
+	font-size: 16px;
+}
+.barline #line {
+	float: left;
+	height: 12px;
+	overflow: hidden;
+	background: #6192D6;
+	border-radius: 8px;
+}
+.barline #msg {
+	position: absolute;
+	left: 80px;
+	top: 30px;
+	display: inline-block;
+	color: #6192D6;
+	font-size: 14px;
+}

@@ -1,0 +1,132 @@
+		/* top样式 */
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -o-flex;
+			display: flex;
+			overflow-x: hidden;
+		}
+		.top{
+			position: relative;
+			z-index: 99999;
+			-webkit-flex-basis: 80px;
+			-moz-flex-basis: 80px;
+			-o-flex-basis: 80px;
+			flex-basis: 80px;
+			background: #333;
+			height: 80px;
+			min-width: 1366px;
+		}
+		.top-c{
+			position: relative;
+			min-width: 1366px;
+			height: 80px;
+		}
+		.logo{
+			margin-left: 70px;
+			margin-top: 8px;
+			float: left;
+		}
+		.logo,.logo h1,.logo img{
+			float: left;
+		}
+		.tit{
+			height: 68px;
+			line-height: 68px;
+			margin-left: 40px;
+			font-weight: normal;
+			color: #fff;
+		}
+		.top-con{
+			height: 80px;
+			position: relative;
+		}
+		.top-tit{
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			color: #fff;
+			font-style: italic;
+			padding-right: 40px;
+		}
+		.singleout{
+			position: absolute;
+			height: 80px;
+			line-height: 80px;
+			right: 0;
+			top: 0;
+			margin-right: 50px;
+			font-size: 14px;
+			color: #8F8F8F;
+		}
+		.selectbtn{
+			position: absolute;
+			top: 40%;
+			left: 90%;
+			display: inline-block;
+			background: url('../../imgs/showhideb.png');
+			background-position:0% 0%;
+			margin-left: 20px;
+			cursor: pointer;
+			width: 16px;
+			height: 16px;
+		}
+		.singleOutBox{
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			width: 80px;
+			height: 80px;
+			border: 1px solid #ccc;
+			background: #fff;
+			display: none;
+			z-index: 9999999;
+		}
+		.singleOutBox div{
+			line-height: 26px;
+			text-align: center;
+		}
+		.singleOutBox a{
+			color: #666;
+		}
+		.singleOutBox .outuser{
+			color: #f66666;
+		}
+
+		/* 									right */
+		.right{
+			overflow: auto;
+			-webkit-flex: 1;
+			-moz-flex: 1;
+			-o-flex: 1;
+			flex: 1;
+		}
+		.right-con{
+			min-width: 1096px;
+			height: auto;
+		}
+		/* top-tit */
+		.text-tit{
+			/* float: left; */
+			width: 666px;
+			margin: 0 auto;
+		}
+		.text-tit li{
+			float: left;
+			width: 111px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+		}
+		.text-tit li a{
+			font-style: normal;
+			color: #fff;
+		}

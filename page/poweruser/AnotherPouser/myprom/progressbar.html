@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>进度条</title>
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/AnotherProwuser/progressbar.css">
+</head>
+<body>
+	<button onClick="processerbar(10000)">点击</button>
+	<div class="alert">
+		<!-- 进度条 -->
+		<div class="progressbar">
+			<table class="commit">
+				<tr>
+					<td>
+						<img src="../../../../imgs/ysb.png" alt="">
+						<span class="tit">webapp.rar</span>
+						<span class="size">大小:16.4MB</span>
+					</td>
+				</tr>
+			</table>
+			<div class="barline" id="probar">
+				<div id="percent"></div>
+				<div id="line" w="100" style="width:0px;"></div>
+				<div id="msg" style=""></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script>
+	function processerbar(time){
+	     document.getElementById('probar').style.display="block";
+		$("#line").each(function(i,item){
+			var a=parseInt($(item).attr("w"));
+			$(item).animate({
+				width: a+"%"
+			},time);
+		});
+	   var si = window.setInterval(
+		function(){
+			a=$("#line").width();
+			b=(a/200*100).toFixed(0);
+			document.getElementById('percent').innerHTML=b+"%";
+			document.getElementById('percent').style.left=a-12+"px";
+			document.getElementById('msg').innerHTML="上传中";
+			if(document.getElementById('percent').innerHTML=="100%") {
+			clearInterval(si);
+			document.getElementById('msg').innerHTML="&nbsp;&nbsp;成功";
+			}
+		},70);
+	};
+</script>
+</html>

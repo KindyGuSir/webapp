@@ -1,0 +1,153 @@
+@charset 'utf-8';
+/* 创建用户 */
+body{min-width: 740px}
+
+/* 表 */
+form{
+	padding-left: 33px;
+	padding-top: 54px;
+	font-size: 14px;
+	color: #4F4F4F;
+}
+.tables p {
+	margin-bottom: 20px;
+}
+.tables p span:nth-child(1){
+	display: inline-block;
+	width: 100px;
+	height: 32px;
+}
+/* 验证提示信息 */
+form p span:last-child,.bind_cont span:last-child{
+	display: inline-block;
+	margin-left: 15px;
+	font-size: 12px;
+	line-height: 32px;
+	color: #f66;
+
+}
+
+input[type='text'],input[type='password']{
+	width: 37%;
+	height: 32px;
+	border: 1px solid #d9d9d9;
+	background: #fff;
+	padding-left: 15px;
+	box-sizing: border-box;
+	border-radius: 4px;
+
+	font-size: 12px;
+}
+input[type='radio']{
+	margin-left: 10px;
+}
+input[name='sex']{
+	margin-right: 20px;
+	vertical-align:middle;
+}
+
+
+/* 绑定 */
+.bind{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.bind p{
+	width: 100px;
+	height: 32px;
+	line-height: 32px;
+	display: inline-block;
+	float: left;
+}
+.bind_cont{
+	width: 60%;
+	min-height: 230px;
+	float: left;
+	border: 1px solid #d9d9d9;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+.bind_cont label{
+	display: inline-block;
+	padding: 0 15px;
+	font-size: 12px;
+	line-height: 24px;
+	color: #d9d9d9;
+	height: 24px;
+	border-radius: 12px;
+	border: 1px solid #d9d9d9;
+	transition: 0.3s;
+	margin-bottom: 10px;
+}
+.bind_cont label:hover{
+	color: #fff;
+	background: #6192d6;
+	border: 1px solid #6192d6;
+}
+.bind_cont input{
+	display: none;
+}
+
+/* 专属div */
+.plate {
+	width: 100%;
+	height: 34px;
+	color:#6f6f6f;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #d9d9d9;
+}
+.bind .plate p{
+	width: auto;
+	height: 34px;
+	line-height: 24px;
+	box-sizing: border-box;
+	margin: 0;
+}
+.bind .plate p:first-child{
+	padding-left: 10px;
+	float: left;
+}
+.bind .plate p:last-child{
+	float: right;
+}
+.bind .plate p:last-child a{
+	display: inline-block;
+	width: auto;
+	height: 16px;
+	line-height: 16px;
+
+	margin: 0 5px;
+	padding: 0  8px;
+
+	font-size: 12px;
+	color:#6f6f6f;
+	border:1px solid #d9d9d9;
+	border-radius: 3px;
+
+}
+
+
+/* textarea */
+.describe{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.describe p{
+	width: 100px;
+	height: 32px;
+	line-height: 32px;
+	display: inline-block;
+	float: left;
+}
+.describe textarea{
+	width: 60%;
+	min-height: 60px;
+	float: left;
+	border: 1px solid #d9d9d9;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 10px 10px;
+	background: transparent;
+}
+

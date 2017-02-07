@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>新建通知</title>
+	<link rel="stylesheet" href="../../../../style/global/test2.css">
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/newnotice.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/notice-alert.css">
+</head>
+<body>
+	<!-- top -->
+	<div class="top">
+	<div class="top-c">
+		<div class="logo">
+			<img class="logoimg" src="../../../../imgs/tplogo.png" alt="">
+			<h1 class="tit">互动视窗系统</h1>
+		</div>
+		<div class="top-con">
+			<div class="top-tit">
+				<h1>为中国教育崛起而努力 同心共筑教育强国梦</h1>
+			</div>
+			<div class="singleout">
+				当前用户:
+				<span>
+					设备管理员
+					<span class="selectBox">
+						<a href="javascript:" id="selectybtn" class="selectbtn"></a>
+					</span>
+				</span>
+				<div id="singleOutBox" class="singleOutBox">
+						<div><a href="javascript:">个人资料</a></div>
+						<div><a href="javascript:">帮助中心</a></div>
+						<div><a class="outuser" href="javascript:">注销</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- pageCont -->
+<div class="pageCont">
+	<!-- left -->
+	<div class="left">
+	<div class="left-con">
+		<div id="firstpane" class="menu_list">
+			<h3 class="menu_head current"><img src="../../../../imgs/h3-person.png" alt=""> 节目管理</h3>
+			<div class="menu_body">
+				<a href="../../poweruser/myprom/myprogram.html"><span >我的节目</span></a>
+				<a href="../../poweruser/release/releasecontrol.html"><span>发布管理</span></a>
+				<a href="../../poweruser/publicprom/publicprogram.html"><span>公共节目</span></a>
+			</div>
+			<h3 class="menu_head"> <img src="../../../../imgs/h3-prom.png" alt=""><a href="../../poweruser/promsearch/currentmulitc.html"><span>播单查询</span></a></h3>
+			<h3 class="menu_head"> <img src="../../../../imgs/h3-email.png" alt=""><a href="../../poweruser/notice/noticetz.html"><span>通知管理</span></a></h3>
+			<h3 class="menu_head"> <img src="../../../../imgs/h3-device.png" alt=""><a href="../../poweruser/devicecontrol/controldev.html">设备控制</a></h3>
+		</div>
+		</div>
+	</div><!-- left end -->
+	<!-- right -->
+	<div class="right">
+	<div class="right-con">
+
+
+	<div class="new-tit clearfix">
+		<h3>新建通知 		<a href="../notice/unicastnotice.html">返回</a></h3>
+	</div>
+	<!-- content -->
+	<div class="new-con clearfix">
+		<div class="conts">
+		<form action="">
+			<p class="ipt-tit">
+				<span> 标题:</span>
+				<input type="text">
+			</p>
+			<p>
+				<span> 内容: </span>
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+			</p>
+			<div class="textareaPrompt">(最多300个汉字)</div>
+			<ul class="time-glb">
+				<div class="clearfix">
+					<span>开始时间：</span><li class="laydate-icon" id="start" style="width:200px; margin-right:10px;"></li>
+				</div>
+				<div class="clearfix">
+					<span>结束时间：</span><li class="laydate-icon" id="end" style="width:200px;"></li>
+				</div>
+			</ul>
+			<p>
+			<span class="showposition">	显示位置： </span>
+				<select id="show" name="">
+					<option value="顶部显示">顶部显示</option>
+					<option value="中间显示">中间显示</option>
+					<option value="底部显示">底部显示</option>
+				</select>
+			</p>
+			<button type="submit">提交</button>
+		</form>
+		</div>
+		<!-- device -->
+	<div class="conts">
+		<div class="alert-left">
+					<div class="left-one">
+						<div class="left-search">
+							<input type="text">
+							<img src="../../../../imgs/search.png" alt="">
+						</div>
+						<div class="left-device">
+							<ul class="uls">
+								<li>101(在线)</li>
+								<li>102(在线)</li>
+								<li>103(在线)</li>
+								<li>104(在线)</li>
+								<li>105(在线)</li>
+								<li>106(在线)</li>
+								<li>107(在线)</li>
+								<li>108(在线)</li>
+							</ul>
+						</div>
+						<a class="addall" href="##">添加全部</a>
+					</div>
+					<img class="right-jt" src="../../../../imgs/u275.png" alt="">
+					<div class="left-two">
+						<h3>已选设备</h3>
+						<div class="right-device">
+							<ul class="devices">
+								<li><span>101(在线)</span><a href="javascript:"></a></li>
+								<li><span>102(在线)</span><a href="javascript:"></a></li>
+								<li><span>103(在线)</span><a href="javascript:"></a></li>
+								<li><span>104(在线)</span><a href="javascript:"></a></li>
+							</ul>
+						</div>
+						<a class="moveall" href="##">移除全部</a>
+					</div>
+				</div>
+	</div><!-- conts end -->
+
+	</div>
+
+		</div><!-- right-con end -->
+	</div><!-- right end -->
+</div><!-- pageCont -->
+</body>
+<script src="../../../../js/test.js"></script>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script src="../../../../js/laydate/laydatea.js"></script>
+<script type="text/javascript">
+
+//显示下级列表
+$(".deviceGroup p a").bind("click",function(){
+	var ull = $(this).parent().parent().children("ul")
+	if(ull.length != 0){
+		if(ull.is(":hidden")){
+			ull.show();
+			$(this).css({"background-position":"0% 100%"});
+		}else{
+			ull.hide();
+			$(this).css({"background-position":"0% 0%"})
+		};
+	};
+});
+// 点击左边li移动到右侧已选设备中
+function adddevice(){
+	$(".uls").children("li").each(function(){
+		$(this).unbind("click");
+		$(this).bind("click",function(){
+			//获取html内容
+			var listr ='<li>'
+			+'<span>'
+			+ $(this).html()
+			+ '</span>'
+			+'<a href="javascript:"></a>'
+			+'</li>';
+			$(".devices").append(listr);
+			remuls();
+		});
+	});
+};
+adddevice();
+// 点击右边li移动到左侧设备中
+function remuls(){
+	$(".devices").find("li").children("a").each(function(){
+		$(this).unbind("click");
+		$(this).bind("click",function(){
+			$(this).parent().remove();
+		});
+	});
+};
+remuls();
+// 点击全部添加到右侧已选设备
+$('.addall').click(function(){
+	//获取html内容
+	$('.uls').children('li').each(function(){
+		var listr ='<li>'
+		+'<span>'
+		+ $(this).html()
+		+ '</span>'
+		+'<a href="javascript:"></a>'
+		+'</li>';
+		$(".devices").append(listr);
+	});
+	remuls();
+});
+// 点击移除全部到左侧设备
+$('.moveall').click(function(){
+	$('.devices').children('li').remove();
+});
+
+
+// 时间插件
+var start = {
+  elem: '#start',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: laydate.now(), //设定最小日期为当前日期
+  max: '2099-06-16 23:59:59', //最大日期
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+     end.min = datas; //开始日选好后，重置结束日的最小日期
+     end.start = datas //将结束日的初始值设定为开始日
+  }
+};
+var end = {
+  elem: '#end',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: laydate.now(),
+  max: '2099-06-16 23:59:59',
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+    start.max = datas; //结束日选好后，重置开始日的最大日期
+  }
+};
+laydate(start);
+laydate(end);
+</script>
+</html>

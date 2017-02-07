@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:s="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../style/admin/createuser.css">
+    <link rel="stylesheet" href="../../../style/global/global.css">
+    <link rel="stylesheet" href="../../../style/global/iframeglobal.css">
+</head>
+<body >
+<!-- 添加新身份 -->
+<div class="user-tit"><img src="${pageContext.request.contextPath}/imgs/nowpath.png" alt="">当前位置：身份管理/添加新身份</div>
+<form class="tables" method="post" name="createRole" id="createRole" action="Role_updateRole" onsubmit="return check()">
+    <p class="username">
+        <span>身份名称: </span><input type="text" name="role.name" onblur="checkIdName()" value=" "><span></span>
+    </p>
+    <div class="bind clearfix">
+        <p>添加板块:</p>
+        <div class="bind_cont">
+            <!-- 板块 -->
+            <div class="plate">
+                <p>常规板块</p>
+                <p style="float:right">
+                    <a>添加板块</a>
+                    <a>重命名</a>
+                    <a>删除</a>
+                </p>
+            </div>
+            <s:iterator value="lstModule" id="module">
+                <span class="<s:property value="id"/>"  <s:iterator value="role.modules" id="m">
+                    <s:if test="#module.id==#m.id">
+                        style="background-color:#6192d6;border-color:#6192d6;color:#fff"
+                    </s:if>
+                </s:iterator>><s:property value="name"/></span>
+                <input type="checkbox" name="moduleIds" id="<s:property value="id"/>"
+                    <s:iterator value="role.modules" id="m">
+                        <s:if test="#module.id==#m.id">
+                           checked="checked"
+                        </s:if>
+                </s:iterator>  >
+            </s:iterator>
+        </div>
+    </div>
+
+    <div class="describe clearfix">
+        <p>职责描述:</p>
+        <textarea name="role.mark" value="<s:property value="role.mark"/>"></textarea>
+    </div>
+
+    <div class="btn">
+        <button>提交</button>
+        <a onclick="history.go(-1)">取消</a>
+    </div>
+</form>
+</body>
+</html>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script>
+    // 表单验证
+    var idName = document.getElementsByName('idName')[0];
+    // check user
+    function checkIdName(){
+        if(idName.value == ''){
+            idName.nextSibling.innerHTML = '身份名称不能为空!';
+            return false;
+        }else{
+            idName.nextSibling.innerHTML = '';
+            return true;
+        };
+    };
+    // 提交时验证
+    function check(){
+        // check user psw
+        if(!checkIdName()){
+            return false;
+        };
+        //未选中绑定模块
+        if(!$('input[type="checkbox"]').is(':checked')){
+            $('.bind_cont span').html('模块未添加！');
+            return false;
+        };
+        // ok 写对了
+        return true;
+    }
+
+    $(function(){
+        // 单机更换label样式
+        var bindLabel = $('.bind_cont span');
+        $(bindLabel).each(function(){
+            $(this).click(function(){
+                var check_box = $('#'+$(this).attr('class'));
+                if(!check_box.is(":checked")){
+                    check_box.attr("checked",true);
+                    $(this).css({'background-color':'#6192d6','border-color':'#6192d6','color':'#fff'});
+                }
+                else{
+                    check_box.attr("checked",false);
+                    $(this).css({'background-color':'#fff','border-color':'#d9d9d9','color':'#d9d9d9'});
+                }
+            });
+        });
+    });
+
+</script>

@@ -1,0 +1,587 @@
+@charset "utf-8";
+/* 身份管理与用户管理通用样式 */
+
+
+
+html,body{
+	min-width: 920px;
+	width: 100%;
+	height: 100%;
+	font-family: "微软雅黑";
+	-moz-user-select:none;/*火狐*/
+	-webkit-user-select:none;/*webkit浏览器*/
+	-ms-user-select:none;/*IE10*/
+	-khtml-user-select:none;/*早期浏览器*/
+	user-select:none;
+}
+input,textarea,select{
+	outline:none;
+}
+textarea{
+	resize:none;
+}
+.pdges{
+	height: 100%;
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: -webkit-row;
+	flex-flow: -moz-row;
+	flex-flow: -ms-row;
+	flex-flow: -o-row;
+	flex-flow:row;
+
+}
+.page1{
+	flex: 1;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: -webkit-column;
+	flex-flow: -moz-column;
+	flex-flow: -ms-column;
+	flex-flow: -o-column;
+	flex-flow: column;
+	box-sizing: border-box;
+}
+.page1 .pg1btn{
+	min-width: 680px;
+	background: #fff;
+	flex-basis:68px;
+}
+/* btn */
+.pg1btn{
+	position: relative;
+	z-index: 10000;
+}
+.pg1btn p{
+	float: left;
+	display: inline-block;
+	height: 28px;
+	margin:20px 0px 20px 10px;
+	font-size: 12px;
+	line-height: 26px;
+}
+.pg1btn p a{
+	box-sizing: border-box;
+	padding: 0 15px;
+	height: 28px;
+	float: left;
+	margin: 0;
+	background: #6192d6;
+	color: #fff;
+	transition: 0.3s;
+	border-radius: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #6192d6;
+}
+
+.pg1btn p a:first-child{
+	border-radius: 14px 0 0 14px;
+}
+.pg1btn p a:last-child{
+	border-radius: 0 14px 14px 0;
+}
+.pg1btn p a:hover{
+	background: #fff;
+	color: #6192d6;
+	border-color:  #6192d6;
+}
+
+/* 添加板块 */
+.addmod{
+	position: relative;
+	overflow: auto;
+	z-index: 10000;
+}
+.addmod a{
+	display: inline-block;
+	width: 120px;
+}
+.exclusive{
+	display: none;
+	position: absolute;
+	top: 48px;
+	left: 130px;
+	overflow: auto;
+	width: 106px;
+	box-shadow: 0 2px 5px rgba(50, 50, 50, 0.2);
+}
+.exclusive li{
+	box-sizing: border-box;
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+	color: #5f5f5f;
+	text-align: center;
+	background: #fff;
+	transition: 0.2s;
+	cursor: pointer;
+}
+.exclusive li:hover{
+	box-shadow: inset 0 0  15px rgba(100, 100, 100, 0.2);
+}
+/* 主视区 */
+.looksee{
+	position: relative;
+	flex: 1;
+	height: 100%;
+}
+
+
+
+
+
+/* 属性 */
+.page2{
+	flex-basis:240px;
+	box-sizing: border-box;
+	border-left:4px solid #e9e4ea;
+	padding: 0 10px;
+}
+/* 切换按钮 */
+.page2btn{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	border-bottom: 1px solid #e9e4ea;
+}
+.page2btn a{
+	float: left;
+	display: inline-block;
+	margin: 12px 8px 0;
+	width: 88px;
+	height: 24px;
+	line-height: 22px;
+	font-size: 18px;
+	color: #fff;
+	background: #72a8f3;
+	border: 2px solid #b0ccf2;
+	transition: 0.2s;
+	border-radius: 8px;
+}
+.page2btn .seta{
+	border-radius: 14px;
+	border-color: #fff;
+	background: #6192d6;
+	box-shadow: 2px 3px 3px 1px rgba(0, 0, 0, 0.2);
+	transform: translate(-1px, -2px);
+}
+
+
+
+
+
+
+
+
+
+
+/* 编辑属性 edit */
+.attrbox{
+	width: 100%;
+	color: #5f5f5f;
+	margin-bottom: 10px;
+}
+.attrbox input{
+	border: 1px solid #d1cece;
+}
+.attrtit{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #333;
+}
+/* 坐标 宽高 */
+.boxzoom{
+	font-size: 12px;
+	line-height: 20px;
+	width:100%;
+	height: 20px;
+	margin-bottom: 10px;
+}
+.boxzoom input{
+	box-sizing: border-box;
+	margin:0 8px;
+	height: 20px;
+	width: 40px;
+	text-align: center;
+}
+.boxzoom span:nth-child(1){
+	float: left;
+}
+.boxzoom span:nth-child(2){
+	float: right;
+}
+/* 版块名称 */
+.setname{
+	width: 100%;
+	height: 28px;
+	font-size: 12px;
+}
+.setname input{
+	width: 100%;
+	height: 100%;
+	padding: 0 10px;
+	box-sizing: border-box;
+	line-height: 28px;
+	border-radius: 4px;
+}
+/* 版块名称 */
+.upbg{
+		position: relative;
+		transition: 0.2s;
+    height: 32px;
+    width: 100%;
+    font-size: 14px;
+    position: relative;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    color: #fff;
+}
+.upbg span{
+	position: absolute;
+	transition: 0.2s;
+	z-index: 1;
+ 	width: 100%;
+	height: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+  background: #6192d6;
+  border-radius: 16px;
+  border: 3px solid #b0ccf2;
+  line-height: 26px;
+  text-align: center;
+}
+.upbg input[type="file"]{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	filter: opacity(0);
+}
+.attrbox:hover a{
+	text-shadow: 0 0 1px  #fff;
+}
+.attrbox:hover a span{
+	background: #4272b4;
+}
+/* 添加板块人员 */
+.addpeople{
+	font-size: 12px;
+}
+.added{
+	position: relative;
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	margin-bottom: 10px;
+}
+.addpeople .added span{
+	width: 40%;
+	height: 100%;
+}
+.addpeople .added input{
+	width: 60%;
+	height: 100%;
+	padding: 0 5%;
+	border-radius: 14px;
+	box-sizing: border-box;
+}
+.added a{
+	position: absolute;
+	right: 16px;
+	top: 8px;
+}
+.added a img{
+	width: 16px;
+	height: 16px;
+}
+.addederror{
+	height: 16px;
+	line-height: 16px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #f66;
+	overflow: hidden;
+	height: 0;
+	transition: 0.4s;
+}
+
+
+#addpeoples{
+	border: 1px solid #d1cece;
+	width: 100%;
+	height: 178px;
+	border-radius: 4px;
+	overflow-y: auto;
+}
+#addpeoples p{
+	height: 22px;
+	line-height: 22px;
+	width: 100%;
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+#addpeoples p:hover{
+	background: #eee;
+}
+#addpeoples p a{
+	color: #6192d6;
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 弹框 */
+/* new alert */
+.alert{
+
+	display: none;
+	position: fixed;
+	top: 20%;
+	left: 50%;
+
+	margin-left: -425px;
+	width: 610px;
+	height: 430px;
+	color: #333;
+	background: #fff;
+	padding:0px 30px;
+	box-sizing: border-box ;
+	box-shadow:  0 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.alert-tit{
+	width: 100%;
+	height: 40px;
+	background: #6192D6;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.userGroup{
+	margin-top: 30px;
+	width: 100%;
+	height: 300px;
+}
+
+
+
+/* 负责人 */
+.principal{
+	font-family: "微软雅黑";
+	float: left;
+	width: 200px;
+	height: 300px;
+}
+.principal h3,.principal select{
+	font-weight: normal;
+	box-sizing: border-box;
+	width: 200px;
+}
+.principal h3{
+	box-sizing: border-box;
+	padding-left: 15px;
+	height: 40px;
+	border: 1px solid #eee;
+	line-height: 40px;
+	color: #aaa;
+}
+.principal select{
+	background: transparent;
+	height:200px;
+	font-size: 12px;
+	border:1px solid #eee;
+
+	margin: 10px 0;
+}
+.principal select option{
+	box-sizing: border-box;
+	padding-left: 15px;
+	width: 100%;
+	height: 24px;
+	padding-top: 3px;
+	line-height: 24px;
+	color: #ccc;
+}
+.principal select option:hover{
+	background: #eee;
+}
+/*  remove add btn*/
+.buttonp{
+	width: 100%;
+}
+.buttonp button{
+	border-radius: 5px;
+}
+.buttonp button:nth-child(1){
+	width: 48%;
+	margin-right: 4%;
+}
+.buttonp button:nth-child(2){
+	width: 48%;
+}
+.principal button{
+	line-height: 32px;
+	height: 32px;
+	width: 48px;
+}
+
+.principal button:hover{
+	background: #75a4e4;
+}
+/* seuser  组员 */
+.seuser{
+	float: right;
+	width: 300px;
+	height: 300px;
+}
+.seuser p{
+	position: relative;
+	width: 100%;
+	height: 32px;
+	margin-bottom: 10px;
+}
+.sp1 span:nth-child(1){
+	float: left;
+	display: inline-block;
+	width: 100px;
+	height: 32px;
+	line-height: 32px;
+	color: #aaa;
+	font-size: 14px;
+}
+.sp1 select{
+	float: left;
+	width: 200px;
+	height: 30px;
+	padding-left: 5px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	color: #aaa;
+
+}
+.sp2 input{
+	box-sizing: border-box;
+	padding: 0 15px;
+	border: 1px solid #eee;
+	width:100%;
+	border-radius: 15px;
+	height: 30px;
+	background: transparent;
+}
+.sp2 a img{
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+}
+/* right select */
+.ss2 {
+	margin-bottom: 10px;
+	width: 100%;
+	height: 165px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	color: #aaa;
+}
+.ss2 option{
+	box-sizing: border-box;
+	padding-left: 15px;
+	width: 100%;
+	height: 24px;
+	padding-top: 3px;
+	line-height: 24px;
+	color: #ccc;
+}
+.seuser button{
+	line-height: 32px;
+	height: 32px;
+	width: 300px;
+}
+.ss2 option:hover{
+	background: #eee;
+}
+
+/*  alert bth*/
+/* 错误信息提示 */
+.btn span{
+	float: left;
+	height: 30px;
+	line-height: 32px;
+	display: inline-block;
+
+
+	font-size: 12px;
+	color:#f66;
+}
+/* 按钮 */
+.alert .btn{
+	min-width: 0;
+	width: 100%;
+	margin: 10px 0;
+}
+.alert .btn a{
+	float: right;
+	box-sizing: border-box;
+	border: 1px solid #6192D6;
+	width: 90px;
+	height: 30px;
+	color: #6192D6;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 14px;
+	background: transparent;
+	margin: 0 15px;
+	transition: 0.4s;
+}
+/* 确认发布 */
+.alert .btn .submitf:hover{
+	color: #fff;
+	background: #6192d6;
+}

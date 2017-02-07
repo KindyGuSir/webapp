@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+/* CSS 定制的公共样式 */
+html, body {
+	height: 100%;
+	width: 100%;
+	font-family: "Microsoft yahei";
+}
+.single .btn{
+	width: 100%;
+	margin: 20px auto;
+}
+.btn a{
+	margin-left: -8px;
+}
+.btn span{
+	margin-left: 8px;
+}
+.btn .newnotice{
+	margin-left: 0;
+}
+.fd{
+	height: 100%;
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: flex;
+	min-width: 1000px;
+}
+.right-con{
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-o-flex: 1;
+	flex: 1;
+	margin: 0 36px;
+}
+/* 发布管理 */
+.single{
+	width: 100%;
+	margin: 0;
+}
+.single img{
+	display: inline-block;
+	width: 94px;
+	height: 54px;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+.single h3{
+	font-weight: normal;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.device-single{
+	border-collapse: collapse;
+	width: 100%;
+}
+.device-single tr{
+	height: 90px;
+	line-height: 90px;
+}
+.device-single th{
+	font-size: 14px;
+	color: #525252;
+	height: 44px;
+	line-height: 44px;
+}
+.device-single td{
+	text-align: center;
+	font-size: 12px;
+	color: #525252;
+}
+.device-single tr{
+	border-bottom: 1px solid #eee;
+}
+.device-single tr:hover{
+	background: #f8f8f8;
+}
+.device-single tr:nth-child(1){
+	height: 44px;
+	background: #f9f9f9;
+}
+.checks{
+	height: 44px;
+	line-height: 44px;
+	background: #eee;
+	padding-left: 16px;
+}
+.checks span{
+	margin-right: 44px;
+}
+.checks input{
+	margin-right: 6px;
+}
+.prom{
+	text-align: center;
+}
+.table-tit th:nth-child(1) input{
+	margin-top: 16px;
+}
+.table-tit th:nth-child(2){
+	width: 80px;
+}

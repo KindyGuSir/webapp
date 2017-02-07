@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="../../css/property_2.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	    // 右上角的用户信息显示
+		function getUrlParameter( name ){
+			name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			var regexS = "[\\?&]"+name+"=([^&#]*)";
+			var regex = new RegExp( regexS );
+			var results = regex.exec(window.parent.location.href );
+			if(results == null)return "";  
+			else {
+			   return results[1];
+			}
+		} 
+		function checkImgPos(){
+			var quick=getUrlParameter('quick');
+		   	if(quick=='1'){
+		    	var pos = document.getElementById("pos");
+		    	var round = document.getElementById("round");
+		    	pos.style.display = 'none';
+		    	round.style.display = 'none';
+		    }
+		}
+		function clearNoNum(obj) {
+	        //先把非数字的都替换掉，除了数字和.
+	        obj.value = obj.value.replace(/[^\d.]/g,"");
+	        //必须保证第一个为数字而不是.
+	        obj.value = obj.value.replace(/^\./g,"");
+	        //保证只有出现一个.而没有多个.
+	        obj.value = obj.value.replace(/\.{2,}/g,".");
+	        //保证.只出现一次，而不能出现两次以上
+	        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+   	 	}
+        function setRoundPrompt(){
+            //add by haoyc 20160401 圆角范围提示
+            var hval=document.getElementById("hVal").value;
+            var wval=document.getElementById("wVal").value;
+            var num=document.getElementById("img_bd_radius").value;
+            var minval1=Number(hval)>Number(wval)?wval:hval;
+            var minval=parseInt(Number(minval1)/2);
+            if(Number(num)>Number(minval)){
+                document.getElementById("prompt").innerHTML="最大值为圆角的半径("+minval+"）";
+            }else{
+                document.getElementById("prompt").innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body  onload="checkImgPos()">
+
+<container>
+    <header>
+        <span  class="img_comp_prpt"></span><label>图片</label>
+    </header>
+    <section class="pos_size" id= 'pos'>
+        <nav class="prpt_nav">
+            <span></span><label>位置大小</label>
+        </nav>
+        <container>
+            <ul>
+                <li><span>X</span><input type="text" id="xVal" name="valEl" /></li>
+                <li><span>Y</span><input type="text" id="yVal" name="valEl" /></li>
+            </ul>
+            <ul>
+                <li><span>W</span><input type="text" id="wVal" name="valEl" /></li>
+                <li><span>H</span><input type="text" id="hVal" name="valEl" /></li>
+            </ul>
+        </container>
+    </section>
+    <section class="check prpt_set">
+        <nav class="prpt_nav">
+            <span></span><label>属性</label>
+        </nav>
+        <container>
+            <div class="prpt_input_text">
+                <label>图片：</label>
+                <img src="../../images/iwincListbg.png" id="img_path"/>
+            </div>
+
+            <div class="prpt_input_text" id="round">
+                <label>圆角 ：<div style="color:#bbb;font-size:12px;">（取值范围为：正数，例如：5）</div></label>
+                <label><div style="color:#bbb;font-size:12px;">位置大小发生变化后可重新设置</div></label>
+                <input type="text" value=0 id="img_bd_radius" name="valEl" onkeyup="clearNoNum(this);setRoundPrompt()" onchange="clearNoNum(this);setRoundPrompt()"/> <!--update by haoyc 圆角范围提示-->
+                <div style="color:#BD0A01;font-size:12px;" id="prompt"></div></label><!--add by haoyc 圆角范围提示-->
+            </div>
+        </container>
+    </section>
+</container>
+<script src="../../js/view/propertyBar/commonPrpty.js"></script>
+</body>
+</html>

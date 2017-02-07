@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="../../css/property_2.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+	    // 右上角的用户信息显示
+		function getUrlParameter( name ){
+			name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			var regexS = "[\\?&]"+name+"=([^&#]*)";
+			var regex = new RegExp( regexS );
+			var results = regex.exec(window.parent.location.href );
+			if(results == null)return "";  
+			else {
+			   return results[1];
+			}
+		} 
+		function checkAccordionPos(){
+			var quick=getUrlParameter('quick');
+		   	if(quick=='1'){
+		    	var pos = document.getElementById("pos");
+		    	pos.style.display = 'none';
+                var div_update = document.getElementById("div_update");
+                div_update.style.display = 'block';
+		    }
+		}
+    </script>
+    <style type="text/css">
+        #update_rank{
+            font-size: 14px;
+            border: 0px none;
+            border-radius: 3px;
+            background-color: #DDD;
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 58px;
+            margin: 5px auto auto 25px;
+        }
+        #reset_rank{
+            font-size: 14px;
+            border: 0px none;
+            border-radius: 3px;
+            background-color: #DDD;
+            padding: 5px 10px;
+            cursor: pointer;
+            position: absolute;
+            margin:-26px auto auto 120px;
+            width: 58px;
+        }
+        #update_rank:hover{
+           border-radius: 20px;
+        }
+        #reset_rank:hover{
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body onload="checkAccordionPos()">
+<container>
+    <header>
+        </span><label>德育排名属性</label>
+    </header>
+    <!-- <section class="pos_size" id='pos'>
+        <nav class="prpt_nav">
+            <span></span><label>位置大小</label>
+        </nav>
+        <container>
+            <ul>
+                <li><span>X</span><input type="text" id="xVal" name="valEl" /></li>
+                <li><span>Y</span><input type="text" id="yVal" name="valEl" /></li>
+            </ul>
+            <ul>
+                <li><span>W</span><input type="text" id="wVal" name="valEl" /></li>
+                <li><span>H</span><input type="text" id="hVal" name="valEl" /></li>
+            </ul>
+        </container>
+    </section> -->
+    <section class="check prpt_set">
+        <!-- <nav class="prpt_nav">
+            <span></span><label>属性</label>
+        </nav> -->
+        <container>
+        <p>添加德育排名：</p>
+            <div class="commonProp">
+                <dl>
+                    <dd style="display: none">
+                        <label>标题:</label>
+                        <input type="text" class="activityType" maxlength="50" id="activity_type" name="valEl" value="德育排名"/>
+                    </dd>
+                </dl>
+            </div>
+            <div class="classSlect">
+                选择班级:<select class="className" id="classId" name="valEl"></select>
+                <div>
+                    <div id="update_rank">同步排名</div>
+                    <div id="reset_rank">清空排名</div>
+                </div>
+
+            </div>
+                <div id="imgList_outer" class="imgList_outer">
+                    <div id="imgList" class="imgList">
+                    </div>
+                    <div class="scroll_item" id="scroll_item">
+                        <!--<img src="" class="scroll_item_img" />-->
+                        <div>
+                            <input type="text" class="scroll_id_input" hidden="true"/>
+                        </div>
+                        <div>
+                            <label style="color:#84909c;font-size: 14px">姓名</label><input  placeholder="填写姓名" maxlength="10" style="width:135px;height:20px;margin-left: 5px" id="scroll_info_input_name" class="scroll_info_input_name"/><br/>
+                            <label style="color:#84909c;font-size: 14px">排名</label><input  placeholder="填写排名" maxlength="10" style="width:135px;height:20px;margin-left: 5px;margin-top: 2px" id="scroll_info_input_rank" class="scroll_info_input_rank"/>
+                        </div>
+                        <div class="scroll_item_opr">
+                            <span class="scroll_item_moveUp"></span>
+                            <span class="scroll_item_moveDwn"></span>
+                            <span class="scroll_item_del"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="add_rankmoraledu" class="newImg" title="添加德育排名"><span></span></div>
+            <div id="div_update" class="div_update"><a href="#" style="text-decoration: none;"><div id="program_update" class="program_update"><label class="upd_label" >更新</label></div></a></div>
+
+        </container>
+    </section>
+</container>
+
+<script src="../../js/view/propertyBar/commonPrpty.js"></script>
+</body>
+</html>

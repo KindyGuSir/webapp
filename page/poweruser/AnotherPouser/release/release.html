@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>发布管理</title>
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/global/iframeglobal.css">
+	<link rel="stylesheet" href="../../../../style/global/top-btm.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/AnotherProwuser/releases.css">
+</head>
+<body>
+		<!-- top -->
+	<div class="top clearfix">
+		<div class="shy">
+			<div class="logo">
+				<img class="logoimg" src="../../../../imgs/tplogo.png" alt="">
+				<h1 class="tit">互动视窗系统</h1>
+			</div>
+			<div class="top-con">
+				<div class="top-tit">
+					<ul class="prom-title">
+						<li><a href="../../../poweruser/AnotherPouser/myprom/myprom.html">我的节目</a></li>
+						<li><a href="../../../poweruser/AnotherPouser/release/release.html">发布管理</a></li>
+						<li><a href="../../../poweruser/AnotherPouser/publicprom/publicprom.html">公共节目</a></li>
+						<li><a href="../../../poweruser/AnotherPouser/promsearch/promsearch.html">播单查询</a></li>
+						<li><a href="../../../poweruser/AnotherPouser/notice/unicastnotice.html">通知管理</a></li>
+						<li><a href="../../../poweruser/AnotherPouser/devicecontrol/devicecontrol.html">设备控制</a></li>
+					</ul>
+				</div>
+				<div class="singleout">
+					当前用户:
+					<span>
+						设备管理员
+						<span class="selectybtn">
+						</span>
+					</span>
+					<div id="singleOutBox" class="singleOutBox">
+							<div><a href="javascript:">个人资料</a></div>
+							<div><a href="javascript:">帮助中心</a></div>
+							<div><a class="outuser" href="javascript:">注销</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<div class="bottom-box">
+	<div class="single">
+		<div class="btn">
+			<span>
+				<a class="delete edituser" href="alert.html" title="编辑">编辑</a>
+				<a id="delete" class="delete" href="##" title="删除">删除</a>
+			</span>
+		</div>
+		<h3>发布记录</h3>
+		<table id="device-single" class="device-single">
+			<tr class="table-tit">
+				<th><input class="checks" type="checkbox"></th>
+				<th class="prom">节目</th>
+				<th>播放时段</th>
+				<th>节目类型</th>
+				<th>发布人</th>
+				<th>发布日期</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td><img src="../../../../imgs/jy.png" alt="">校领导寄语</td>
+				<td>2016.1.1-2017.1  16:00-8:00</td>
+				<td>插播节目</td>
+				<td>王富贵</td>
+				<td>2016-11-10 11:05</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td><img src="../../../../imgs/liuyi.jpg" alt="">校领导寄语</td>
+				<td>2016.1.1-2017.1  16:00-8:00</td>
+				<td>插播节目</td>
+				<td>王富贵</td>
+				<td>2016-11-10 11:05</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td><img src="../../../../imgs/jy.png" alt="">校领导寄语</td>
+				<td>2016.1.1-2017.1  16:00-8:00</td>
+				<td>插播节目</td>
+				<td>王富贵</td>
+				<td>2016-11-10 11:05</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td><img src="../../../../imgs/yiban.jpg" alt="">校领导寄语</td>
+				<td>2016.1.1-2017.1  16:00-8:00</td>
+				<td>插播节目</td>
+				<td>王富贵</td>
+				<td>2016-11-10 11:05</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td><img src="../../../../imgs/jainghau.jpg" alt="">校领导寄语</td>
+				<td>2016.1.1-2017.1  16:00-8:00</td>
+				<td>插播节目</td>
+				<td>王富贵</td>
+				<td>2016-11-10 11:05</td>
+			</tr>
+		</table>
+		<!-- 分页 -->
+			<div class="gopage">
+				<div class="clearfix">
+					<a class="nonepage" href="?id=">上一页</a>
+					<a class="nowpage" href="?id=">1</a>
+					<a href="?id=">2</a>
+					<a href="?id=">3</a>
+					<a href="?id=">4</a>
+					<a href="?id=">5</a>
+					<a href="?id=">6</a>
+					<a href="?id=">7</a>
+					<a href="?id=">8</a>
+					<a href="?id=">下一页</a>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+</body>
+</html>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script src="../../../../js/test.js"></script>
+<script src="../../../../js/layer/layer.min.js"></script>
+<script>
+	// 点击编辑判断
+	$('.edituser').click(function(){
+		var unCheckTrue = $('.device-single').find('input:checked');
+		// console.log(unCheckTrue.length);
+		if ( unCheckTrue.length == 0 ) {
+			layer.alert(
+				'您还未选择节目，请选择一条节目'
+			)
+			return false;
+		}else if( unCheckTrue.length > 1 ){
+			layer.alert(
+				'请选择一条节目进行编辑'
+			)
+			return false;
+		}else{
+			return true;
+		}
+	});
+	// 点击删除弹框
+	$('#delete').click(function(){
+		var unCheckTrue = $('.device-single').find('input:checked');
+		if ( unCheckTrue.length == 0 ){
+			layer.alert('请选择至少一条节目删除')
+		}else{
+			layer.alert('您确定要删除吗？')
+		}
+	});
+	//单击显示隐藏 userbox
+		$(".selectybtn").bind("click",function(){
+			if($("#singleOutBox").is(":hidden")){
+				$(".selectybtn").css({"background-position":"0% 100%"});
+				$("#singleOutBox").show();
+			}else{
+				$(".selectybtn").css({"background-position":"0% 0%"});
+				$("#singleOutBox").hide();
+			};
+		});
+
+	// 全选/取消全选
+	$('.checks').click(function(){
+		if ( this.checked ){
+			$('#device-single td input').prop('checked',true);
+		}else{
+			$('#device-single td input').prop('checked',false);
+		}
+		checkInput();
+	});
+	//单选
+	$('#device-single td input').click(function(){
+		checkInput();
+	});
+	function checkInput(){
+		var numTrue = 0;
+		$('#device-single td input').each(function(){
+			if($(this).prop("checked")){
+				$(this).parent().parent().css({'background':'#f9f9f9'});
+				numTrue += 1;
+			}else{
+				$(this).parent().parent().css({'background':''});
+			};
+		});
+		if(numTrue != $('#device-single td input').length){
+			$('.checks').prop("checked",false);
+		}else{
+			$('.checks').prop("checked",true);
+		}
+	}
+</script>

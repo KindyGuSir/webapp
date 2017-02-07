@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="../../../style/admin/createuser.css">
+	<link rel="stylesheet" href="../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../style/global/iframeglobal.css">
+</head>
+<body>
+
+
+	<!-- 创建用户 -->
+	<div class="user-tit"><img src="${pageContext.request.contextPath}/imgs/nowpath.png" alt="">当前位置：首页 / 用户管理 / 创建用户</div>
+	<form class="tables" method="post" name="createUser" id="createUser" action="User_saveUser" onsubmit="return check()">
+		<p class="username">
+			<span>用户名: </span><input type="text" name="loginName" id="loginName" onblur="checkUser()" placeholder="请填写用户名"><span></span>
+		</p>
+
+		<p class="pswd">
+			<span>密码: </span><input type="password" name="loginPwd"  id="loginPwd" onblur="checkPsw()" placeholder="请填写密码"><span></span>
+		</p>
+
+		<p class="uname">
+			<span>姓名: </span><input type="text" name="userName"  id="userName"  placeholder="请填写姓名"><span></span>
+		</p>
+
+		<p class="sex">
+			<span>性别:</span>
+			<label for="men">男</label><input class="men" id="men" type="radio" name="sex" checked="checked">
+			<label for="women">女</label><input class="women" id="women" type="radio" name="sex">
+		</p>
+
+		<p class="phone">
+			<span>电话: </span><input type="text" name = "mobile" id = "mobile" placeholder="请填写电话">
+		</p>
+
+		<p class="email">
+			<span>邮箱: </span><input type="text" name = "email" id="email" placeholder="请填写邮箱">
+		</p>
+
+		<div class="bind clearfix">
+			<p>绑定身份:</p>
+			<div class="bind_cont">
+				<s:iterator value="lstRole">
+					<span class="jmRelease"><s:property value="name"/> </span>
+					<input type="checkbox" name="<s:property value="name"/>" id="<s:property value="id"/>">
+				</s:iterator>
+
+				<!-- 验证后提示信息 -->
+				<div></div>
+			</div>
+		</div>
+
+		<div class="addgroup bind clearfix">
+			<p>添加到分组:</p>
+				<select  name="people" id="people" size="10">
+
+					<s:iterator value="lstGroups">
+						<option value="<s:property value="id"/> "><s:property value="name"/> </option>
+					</s:iterator>
+
+				</select>
+		</div>
+
+
+		<div class="btn">
+			<a href="">提交</a>
+			<a onclick="history.go(-1)">取消</a>
+		</div>
+	</form>
+</body>
+</html>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script>
+
+// 表单验证
+var user = document.getElementsByName('loginName')[0];
+var psw = document.getElementsByName('loginPwd')[0];
+
+// check user
+function checkUser(){
+	if(user.value != ''){
+		var regUser = /^[a-zA-z0-9-_]{1,18}$/;
+		if(!regUser.test(user.value)){
+			user.nextSibling.innerHTML = '用户名为字母数字下划线组成 长度不能超过18位！';
+			return false;
+		}else{
+			user.nextSibling.innerHTML = '';
+			return true;
+		};
+	}else{
+		user.nextSibling.innerHTML = '用户名不能为空!';
+		return false;
+	}
+};
+// check psw
+
+function checkPsw(){
+
+	if(psw.value != ''){
+		var regPsw = /^[a-zA-z0-9-_]{6,18}$/;
+		if(!regPsw.test(psw.value)){
+			psw.nextSibling.innerHTML = '密码为字母数字下划线组成 长度 6-18 位！';
+			return false;
+		}else{
+			psw.nextSibling.innerHTML = '';
+
+
+			return true;
+		};
+	}else{
+		psw.nextSibling.innerHTML = '密码不能为空!';
+		return false;
+	}
+};
+// 提交时验证
+function check(){
+	// check user psw
+	if(!checkUser() || !checkPsw()){
+		return false;
+	}
+
+	//未选中绑定身份
+//	if(!$('input[type="checkbox"]').is(':checked')){
+//		$('.bind_cont div').html('未绑定身份');
+//		return false;
+//	};
+	//ok 写对了
+	return true;
+}
+
+$(function(){
+	// 单机更换label样式
+	var bindLabel = $('.bind_cont span');
+	$(bindLabel).each(function(){
+			$(this).click(function(){
+						$('.bind_cont div:last-child').html('');
+						if(!$('#'+$(this).attr('class')).is(':checked')){
+								$('#'+$(this).attr('class')).attr("checked",true);
+								$(this).css({'background-color':'#6192d6','border-color':'#6192d6','color':'#fff'});
+						}else{
+								$('#'+$(this).attr('class')).attr("checked",false);
+								$(this).css({'background-color':'#fff','border-color':'#d9d9d9','color':'#d9d9d9'});
+						};
+			});
+	});
+
+
+
+
+});
+</script>

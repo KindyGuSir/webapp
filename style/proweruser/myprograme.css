@@ -1,0 +1,235 @@
+@charset "utf-8";
+/* 节目内容 */
+.programContent{
+	margin-left: 32px;
+	margin-top: 40px;
+	width: 96%;
+}
+.programtit{
+	width: 100%;
+	height: 20px;
+}
+.mypro{
+	float: left;
+	font-weight: normal;
+	font-size: 16px;
+}
+.allpros{
+	float: right;
+	font-size: 12px;
+}
+/* 上传按钮 */
+.update-btn{
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.update-btn button:nth-child(1){
+	border-radius: 3px;
+	margin-right: 10px;
+	font-size: 12px;
+	display: inline-block;
+	width: 60px;
+	height: 26px;
+	line-height: 26px;
+}
+.update-btn button:nth-child(2){
+	border-radius: 3px;
+	margin-right: 10px;
+	font-size: 12px;
+	display: inline-block;
+	width: 100px;
+	height: 26px;
+	line-height: 26px;
+}
+
+/* 节目列表 */
+.pro-left h3{
+	float: left;
+	font-weight: normal;
+	line-height: 32px;
+	font-size: 20px;
+}
+/* 搜索 */
+.pro-search{
+	width: 100%;
+	height: 32px;
+}
+/* 节目预览 */
+.pro-con{
+	width: 100%;
+	min-width: 720px;
+	margin-top: 40px;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+.pro-right{
+	float: right;
+	width: 340px;
+	height: 32px;
+	line-height: 32px;
+	margin:20px 0px 20px 10px;
+}
+.pro-right span{
+	display: inline-block;
+}
+.search{
+	border-radius: 16px;
+	background: transparent;
+	border: 1px solid #ccc;
+	width: 260px;
+	height: 28px;
+	color: #666;
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+.searchimg{
+	width: 20px;
+	height: 20px;
+}
+.searchtext{
+	position: relative;
+}
+.searchimg{
+	position: absolute;
+	right: 12px;
+	top: 6px;
+	cursor: pointer;
+}
+.zu,.zu1{
+	vertical-align: middle;
+	cursor: pointer;
+}
+/* 列表 */
+.pro-con li{
+	width: 100%;
+	height: 40px;
+	margin-top: 20px;
+}
+.pro-con div{
+	float: left;
+	font-size: 12px;
+}
+.checkall{
+	cursor: pointer;
+}
+/* 选择出li里所有的div并添加宽高 */
+.pro-con li div:nth-child(1),.pro-con li div:nth-child(2){
+	width: 6%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.pro-con li div:nth-child(3){
+	width: 26%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.pro-con li div:nth-child(4){
+	width: 6%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.pro-con li div:nth-child(5){
+	width: 13%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.pro-con li div:nth-child(6){
+	width: 13%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.pro-con li div:nth-child(6) select{
+	background: transparent;
+	border: none;
+}
+.pro-con li div:nth-child(7){
+	width: 13%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.pro-con li div:nth-child(8){
+	width: 14%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+/* 查找结束 */
+.allpro select{
+	background: transparent;
+	border: none;
+}
+.pro-con .pro-tit div{
+	height: 44px;
+	line-height: 44px;
+}
+.pro-con li div:first-child{
+	position: relative;
+}
+.pro-con li div input:first-child{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -7.5px;
+	margin-top: -7.5px;
+}
+.pro-tit{
+	border-bottom: 1px solid #eee;
+	box-sizing: border-box;
+}
+.prom-img{
+	width: 206px;
+	height: 180px;
+	display: none;
+}
+.pro-con .festival{
+	display: none;
+	border: 1px solid #eee;
+}
+/* 上方按钮 */
+.pg1btn{
+	min-width: 691px;
+	background: #fff;
+	flex-basis:68px;
+}
+/* btn */
+.pg1btn p{
+	float: left;
+	display: inline-block;
+	height: 28px;
+	margin:20px 0px 20px 10px;
+	font-size: 12px;
+	line-height: 26px;
+}
+.pg1btn p a{
+	box-sizing: border-box;
+	padding: 0 15px;
+	height: 28px;
+	float: left;
+	margin: 0;
+	background: #6192d6;
+	color: #fff;
+	transition: 0.3s;
+	border-radius: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #6192d6;
+}
+
+.pg1btn p a:first-child{
+	border-radius: 14px 0 0 14px;
+}
+.pg1btn p a:last-child{
+	border-radius: 0 14px 14px 0;
+}
+.pg1btn p a:hover{
+	background: #fff;
+	color: #6192d6;
+	border-color:  #6192d6;
+}

@@ -1,0 +1,587 @@
+@charset "utf-8";
+body{
+	width: 100%;
+	min-height: 720px;
+}
+
+ a{
+	font-family: "微软雅黑";
+	color: #6192D6;
+}
+.btn{
+	margin-left: 32px;
+	margin-top: 16px;
+	width: 96%;
+}
+.edit{
+	float: right;
+}
+.edituser, .btn .adduser , .edit button , .btn .addid{
+	background: #6192D6;
+	border: none;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	width: 100px;
+	height: 28px;
+	line-height: 26px;
+	cursor: pointer;
+	border-radius: 3px;
+	display: inline-block;
+	font-family: '微软雅黑';
+	font-size: 14px;
+}
+
+.idcard {
+	min-width: 700px;
+	width: 96%;
+	margin-left: 32px;
+	margin-top: 16px;
+	box-sizing: border-box;
+	font-size: 12px;
+
+}
+.idcard table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+	color: #959595;
+}
+.idcard table td:nth-child(1){
+	text-align: center;
+}
+.idcard th {
+	border: 1px solid #ccc;
+	height: 44px;
+}
+.idcard td {
+	border: 1px solid #ccc;
+	height: 40px;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+.idcard td:nth-child(3) {
+	text-align: center;
+	position: relative;
+}
+.idcard td:nth-child(3):hover a{
+	display: block;
+}
+.idcard td:nth-child(3) a{
+	right: 10%;
+	top: 12px;
+	position: absolute;
+	display: none;
+}
+
+/* tr */
+.table-tit {
+	height: 46px;
+	color: #333;
+	background: #FCFCFC;
+}
+.number{
+	width: 5%;
+}
+.group{
+	width: 50%;
+}
+.people{
+	width: 30%;
+}
+.look{
+	width: 15%;
+}
+.more {
+	color: #6192D6;
+	cursor: pointer;
+}
+/* td click w*h */
+tr td:nth-child(2) span:first-child{
+	display: inline-block;
+	height: 100%;
+	line-height: 40px;
+}
+table tr td:last-child{
+	text-align: center;
+}
+
+.level1 , .level2 , .level3{
+	width: 100%;
+	height: 40px;
+}
+
+/* 重名名 添加 删除 间距 */
+#idcard input{
+	border: none;
+	background: transparent;
+	cursor: default;
+}
+.idcard tr td{
+	box-sizing: border-box;
+}
+.level1 td:nth-child(2){
+	padding-left: 50px;
+}
+.level2 td:nth-child(2){
+	padding-left: 90px;
+}
+.level3 td:nth-child(2){
+	padding-left: 130px;
+}
+.uid{
+	position: relative;
+}
+/* a show/hide */
+td .uid{
+	visibility: hidden;
+}
+td:hover .uid{
+	visibility: visible;
+}
+
+
+
+/*  组弹框 new alert */
+.alert{
+
+	display: none;
+	position: fixed;
+	top: 10%;
+	left: 50%;
+
+	margin-left: -390px;
+	width: 610px;
+	height: 460px;
+	color: #333;
+	background: #fff;
+	padding:0px 30px;
+	box-sizing: border-box ;
+	box-shadow:  0 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.left{
+	float: left;
+	width: 50%;
+}
+.alert .add-tit{
+	width: 94%;
+	height: 42px;
+	color: #fff;
+	text-align: center;
+	line-height: 42px;
+	margin: 0 auto;
+	background: #6192D6;
+	font-size: 16px;
+	font-weight: normal;
+}
+.alert-tit{
+	width: 100%;
+	height: 40px;
+	background: #6192D6;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;width: 100%;
+	height: 40px;
+	background: #6192D6;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.userGroup{
+	margin-top: 30px;
+	width: 100%;
+	height: 300px;
+}
+
+
+
+/* 负责人 */
+.principal{
+	font-family: "微软雅黑";
+	float: left;
+	width: 200px;
+	height: 300px;
+}
+.principal h3,.principal select{
+	font-weight: normal;
+	box-sizing: border-box;
+	width: 200px;
+}
+.principal h3{
+	box-sizing: border-box;
+	padding-left: 15px;
+	height: 40px;
+	border: 1px solid #eee;
+	line-height: 40px;
+	color: #aaa;
+}
+.principal select{
+	background: transparent;
+	height:200px;
+	font-size: 12px;
+	border:1px solid #eee;
+
+	margin: 10px 0;
+}
+.principal select option{
+	box-sizing: border-box;
+	padding-left: 15px;
+	width: 100%;
+	height: 24px;
+	padding-top: 3px;
+	line-height: 24px;
+	color: #ccc;
+}
+.principal select option:hover{
+	background: #eee;
+}
+.principal button{
+	line-height: 32px;
+	height: 32px;
+	width: 200px;
+}
+.principal button:hover{
+	background: #75a4e4;
+}
+/* seuser  组员 */
+.seuser{
+	float: right;
+	width: 300px;
+	height: 300px;
+}
+.seuser p{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+.sp2 input{
+	box-sizing: border-box;
+	padding: 0 15px;
+	border: 1px solid #eee;
+	width:100%;
+	border-radius: 20px;
+	height: 40px;
+	background: transparent;
+}
+.sp2 a img{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+}
+/* right select */
+.ss2 {
+	margin-bottom: 10px;
+	width: 100%;
+	height: 200px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	color: #aaa;
+}
+.ss2 option{
+	box-sizing: border-box;
+	padding-left: 15px;
+	width: 100%;
+	height: 24px;
+	padding-top: 3px;
+	line-height: 24px;
+	color: #ccc;
+}
+.seuser button{
+	line-height: 32px;
+	height: 32px;
+	width: 300px;
+}
+.ss2 option:hover{
+	background: #eee;
+}
+
+/*  alert bth*/
+/* 错误信息提示 */
+.btn span{
+	float: left;
+	height: 30px;
+	line-height: 32px;
+	display: inline-block;
+
+
+	font-size: 12px;
+	color:#f66;
+}
+/* 按钮 */
+.alert .btn{
+	width: 100%;
+	margin: 10px 0;
+}
+.alert .btn a{
+	float: right;
+	box-sizing: border-box;
+	border: 1px solid #6192D6;
+	width: 90px;
+	height: 30px;
+	color: #6192D6;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 14px;
+	background: transparent;
+	margin: 0;
+}
+
+
+
+
+
+
+/* 查看设备弹框  look device */
+.lookDevice{
+	display: none;
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	margin-left: -300px;
+	width: 360px;
+	height: 460px;
+	color: #333;
+	background: #fff;
+	padding:0px 30px;
+	box-sizing: border-box ;
+	box-shadow:  0 0px 10px 1px rgba(0, 0, 0, 0.1);
+
+	overflow-y: auto;
+}
+.ldtit{
+	width: 100%;
+	height: 40px;
+	background: #6192D6;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+.lookDevice table{
+	border-collapse: collapse;
+	margin: 10px 0;
+	width: 100%;
+}
+.lookDevice table th{
+	font-size: 14px;
+	height: 38px;
+}
+.lookDevice table td{
+	text-align: center;
+	font-size: 12px;
+	height: 30px;
+}
+.lookDevice table th,.lookDevice table td{
+	border: 1px solid #eee;
+}
+
+/*  lookDevice 关闭按钮  */
+.lookDevice a:last-child{
+	display: inline-block;
+	background: #6192D6;
+	color: #fff;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	width: 100%;
+}
+/*                       device */
+.device{
+	height: 360px;
+	overflow: hidden;
+	width: 94%;
+	margin: 0 auto;
+}
+.device h3{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+.all-tab{
+	width: 200px;
+	float: left;
+	border: 1px solid #ccc;
+	padding-bottom: 20px;
+	overflow-y: scroll;
+	height: 270px;
+}
+
+.alldevice{
+	height: 26px;
+	line-height: 26px;
+	background: #6192D6;
+	border-radius: 10px;
+	color: #fff;
+}
+.active{
+	display: block;
+}
+
+.device .device-tit{
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+}
+.device h3 img{
+	display: inline-block;
+	padding-left: 10px;
+	cursor: pointer;
+	padding-top: 2px;
+}
+/* 所有设备组样式 */
+#all-tab {
+	width: 256px;
+	height: 228px;
+}
+
+#all-tab h3{
+	height: 26px;
+}
+#all-tab h3 span{
+	position: absolute;
+	display: inline-block;
+	height: 14px;
+	line-height: 14px;
+	margin-left: 10px;
+	top: 6px;
+}
+
+.all-tab li{
+	cursor: pointer;
+}
+.alldevice{
+	padding-left: 14px;
+}
+
+.all-tab h3{
+	position: relative;
+}
+
+.all-tab h3:hover a{
+	visibility: visible;
+}
+.select-img{
+	margin-top: 5px;
+	margin-left: 10px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url('../../imgs/showhideb.png') no-repeat;
+	background-position: 0 0;
+}
+/* 全员添加 图标 显示隐藏 */
+
+.all-tab .add-img{
+	position: absolute;
+	display: inline-block;
+	visibility: hidden;
+	top:6px;
+	right: 15px;
+	cursor: pointer;
+	width: 14px;
+	height: 14px;
+	background: url("../../imgs/add2.png") no-repeat;
+
+}
+
+.deviceGroup li{
+	position: relative;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 30px;
+	color: #898989;
+	display: none;
+	padding-left: 40px;
+	font-size: 12px;
+	color: #666;
+}
+.addImg{
+	position: absolute;
+	display: inline-block;
+	visibility: hidden;
+	right: 15px;
+	top:6.5px;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	background: url("../../imgs/add.png") no-repeat;
+	background-size:100% 100%;
+}
+.deviceGroup li:hover a{
+	visibility: visible;
+}
+.alert-btn{
+	width: 94%;
+	margin: 0 3%;
+	height: 32px;
+}
+.alert-btn .close-btn{
+	background: transparent none repeat scroll 0 0;
+  border: 1px solid #6192d6;
+  border-radius: 14px;
+  box-sizing: border-box;
+  color: #6192d6;
+  float: right;
+  font-size: 14px;
+  height: 30px;
+  line-height: 28px;
+  margin: 0;
+  width: 90px;
+}
+/* 左侧指定设备框 */
+#appoint li,#appold li{
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #898989;
+	padding: 0 15px;
+	position: relative;
+}
+#appoint li a ,#appold li a{
+	position: absolute;
+	visibility: hidden;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	right: 10%;
+	top: 5px;
+	background: url('../../imgs/remove.png') no-repeat;
+}
+#appoint li:hover a ,#appold li:hover a{
+	visibility: visible;
+}
+/* search框 */
+.search{
+	position: relative;
+}
+.search input{
+	width: 94%;
+	border-radius: 12px;
+	border: 1px solid #ccc;
+	height: 24px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+.search .sch{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 4px;
+	cursor: pointer;
+}
+
+

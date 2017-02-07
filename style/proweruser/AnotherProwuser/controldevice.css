@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* 设备控制样式 */
+.btn{
+	width: 98%;
+  margin: 20px auto;
+}
+.btn a{
+	margin-left: -8px;
+}
+.btn span{
+	margin-left: 8px;
+}
+.btn .plan{
+	margin-left: 6px;
+}
+.edit{
+	float: left;
+}
+.edituser, .btn .adduser , .edit button , .btn .addid{
+	background: #6192D6;
+	border: none;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	width: 100px;
+	height: 28px;
+	line-height: 26px;
+	cursor: pointer;
+	border-radius: 3px;
+	display: inline-block;
+	font-family: '宋体';
+	font-size: 14px;
+}
+/* 列表样式 */
+.idcard {
+	min-width: 1300px;
+	margin: 0 20px;
+	box-sizing: border-box;
+	font-size: 12px;
+	text-align: center;
+	border-bottom: none;
+}
+.idcard tr{
+	height: 80px;
+	line-height: 80px;
+}
+.idcard tr:hover{
+	background: #f8f8f8;
+}
+.idcard table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+	color: #525252;
+}
+.table-tit{
+	border-bottom: 1px solid #eee;
+}
+.idcard th {
+	height: 44px;
+	color: #525252;
+  font-size: 14px;
+  font-weight: normal;
+  font-weight: bolder;
+}
+.idcard td {
+	border-bottom: 1px solid #eee;
+	height: 40px;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+.table-tit {
+	height: 46px;
+	background: #FCFCFC;
+}
+.table-tit th:nth-child(1){
+	width: 1%;
+}
+.table-tit th:nth-child(2){
+	width: 10%;
+}
+.table-tit th:nth-child(3){
+	width: 10%;
+}
+.table-tit th:nth-child(4){
+	width: 10%;
+}
+.table-tit th:nth-child(5){
+	width: 10%;
+}
+.table-tit th:nth-child(6){
+	width: 10%;
+}
+.table-tit th:nth-child(7){
+	width: 10%;
+}
+
+
+/* btn */
+.pro-right{
+	float: right;
+	width: 340px;
+}
+.pro-right span{
+	display: inline-block;
+}
+.search{
+	border-radius: 16px;
+	background: transparent;
+	border: 1px solid #ccc;
+	width: 260px;
+	height: 28px;
+	color: #666;
+	box-sizing: border-box;
+	padding: 0 15px;
+	position: relative;
+}
+
+.searchtext{
+	float: right;
+	position: relative;
+}
+.searchimg{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;
+	right: 6px;
+	top: 4px;
+	cursor: pointer;
+}
+.zu,.zu1{
+	vertical-align: middle;
+	cursor: pointer;
+}
+/* 上传按钮 */
+.btn p{
+	float: left;
+	height: 72px;
+	line-height: 72px;
+}

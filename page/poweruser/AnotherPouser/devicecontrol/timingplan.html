@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/timingplan.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/planhs.css">
+</head>
+<body>
+<div class="alertBox">
+	<!-- 定时计划 -->
+<!-- w280 h253 -->
+	<div class="alert-con clearfix">
+		<form action="##">
+
+			<div>
+					<p>设置开机时间</p>
+					<input type="text" name="a" class="th">
+			</div>
+
+			<div>
+					<p>设置关机时间</p>
+					<input type="text" name="b" class="th">
+			</div>
+
+			<div>
+					<p>重复规则</p>
+					<select name="" id="">
+						<option value="allday">每天</option>
+						<option value="12345">周一至周五</option>
+						<option value="0">自定义</option>
+					</select>
+			</div>
+
+			<div class="plateButton clearfix">
+				<button class="enter" href="##">确定</button>
+				<a class="delete" href="javascript:">取消</a>
+			</div>
+		</form>
+	</div>
+
+	</div>
+
+
+</body>
+</html>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script>
+
+$(".th").focus(function(){
+	$('.time-h').remove();
+	$ts = $(this);
+	var hdivs = '<div class="time-h clearfix">';
+	for (var i = 0; i < 24; i++) {
+		hdivs += '<div>'+i+'</div>';
+	}
+	hdivs += '</div>';
+	$ts.after(hdivs);
+	//点击事件
+	$(".time-h div").each(function(){
+		$(this).unbind('click');
+		$(this).bind('click',function(){
+			$ts.val($(this).html()+' : ');
+			// 选择时间之后选择分钟
+			$(".time-h div").remove();
+
+			var hdivs = '';
+			for (var i = 0; i < 59; i++) {
+				if (i<10) {
+					hdivs += '<div>'+'0'+i+'</div>';
+				}else{
+					hdivs += '<div>'+i+'</div>';
+				}
+				
+			}
+			$('.time-h').html(hdivs);
+			$(".time-h div").unbind('click');
+			$(".time-h div").bind('click',function(){
+				$ts.val($ts.val()+$(this).html());
+				$('.time-h').remove();
+			});
+
+		});
+	});
+});
+
+
+// 自定义选择发布日期
+$('.alert-con select').bind("change",function(){
+	if($(this).val() == 0){
+		var weekstr = '<div class="seweek clearfix">'
+		+'	<div>星期一</div>'
+		+'	<div>星期二</div>'
+		+'	<div>星期三</div>'
+		+'	<div>星期四</div>'
+		+'	<div>星期五</div>'
+		+'	<div>星期六</div>'
+		+'	<div>星期日</div>'
+		+'	<div>确定</div>'
+		+'	</div>';
+		$(this).after(weekstr);
+		//单机变更样式
+		$(".seweek div:lt(7)").each(function(){
+			$(this).bind("click",function(){
+				if($(this).attr("class") != "sed"){
+					$(this).attr("class","sed");
+				}else{
+					$(this).attr("class","");
+				};
+			});
+		});
+		//自定义
+		var zdy = '';
+		var zdyzh = '';
+		$('.seweek div:last-child').unbind();
+		$('.seweek div:last-child').bind('click',function(){
+			//console.log($(".sed").length);
+			if($(".sed").length != 0){
+				$(".sed").each(function(){
+					zdyzh	+= $(this).text()+" ";
+					switch($(this).text()){
+						case '星期一':
+							zdy += 1+',';
+						break;
+						case '星期二':
+							zdy += 2 + ',';
+						break;
+						case '星期三':
+							zdy += 3 + ',';
+						break;
+						case '星期四':
+							zdy += 4 + ',';
+						break;
+						case '星期五':
+							zdy += 5 + ',';
+						break;
+						case '星期六':
+							zdy += 6 + ',';
+						break;
+						case '星期日':
+							zdy += 7 + ',';
+						break;
+					}
+				});
+			};
+
+			//console.log(zdyzh +" "  + zdy.substr(0,zdy.length-1));
+			if(zdy.length != 0){
+				var zdyop = '<option value="'+zdy.substr(0,zdy.length-1)+'">'+zdyzh+'</option>';
+				if($('.alert-con select option').length < 4){
+					$('.alert-con select').append(zdyop);
+					$('.alert-con select option:nth-child(4)').prop('selected',true);
+				}else{
+					$('.alert-con select option:nth-child(4)').remove();
+					$('.alert-con select').append(zdyop);
+					$('.alert-con select option:nth-child(4)').prop('selected',true);
+				};
+			}
+			
+			
+			$('.seweek').remove();
+		});
+	}else{
+		$(".seweek").remove();
+	};
+});
+</script>

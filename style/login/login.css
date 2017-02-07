@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+body{
+	background: #f8f8f8;
+}
+header{
+	width: 1000px;
+	height: 67px;
+	margin: 70px auto;
+	color: #999999;
+	font-size: 22px;
+}
+.head-logo{
+	float: left;
+	margin-top: 6px;
+	margin-right: 9px;
+	height: 55px;
+	width: 65px;
+}
+.head-logo img{
+	height: 55px;
+	width: 65px;
+}
+.head-tit{
+	float: left;
+	width: auto;
+	height: 67px;
+	line-height: 67px;
+}
+.head-tit span{
+	margin-right: 5px;
+}
+
+
+
+													/* header end */
+.content{
+	height: 445px;
+	width: 1000px;
+	margin: 80px auto;
+}
+/* img */
+.cont-img{
+	float: left;
+	width: 560px;
+	height: 445px;
+}
+/* login */
+.cont-login{
+	float: left;
+	height: 445px;
+	width: 290px;
+	padding: 0 75px
+}
+.cont-login h2{
+	width: 280px;
+	height: 38px;
+	line-height: 38px;
+	color: #ea5e00;
+	font-size: 22px;
+}
+.cont-login p{
+	width: 290px;
+	height: 38px;
+	margin: 14px 0;
+	text-align: left;
+}
+.cont-login p input{
+	width: 272px;
+	height: 36px;
+	border:1px solid #bcbcbc;
+	padding-left: 16px;
+	color:#cccccc;
+	background: #fff;
+	font-size: 14px;
+}
+/* prompt */
+#errorPrompt{
+	font-size: 12px;
+	color:#f66;
+}
+/* checkbox */
+.cont-login .select .remember{
+	height: 38px;
+	width: 280px;
+	margin: 14px 0;
+	color:#333333;
+	font-size: 12px;
+	line-height: 38px;
+}
+.cont-login .select input{
+	margin-right: 6px;
+	vertical-align:middle;
+}
+.cont-login .select label{
+	vertical-align:middle;
+}
+/* hr */
+.formhr{
+	width: 290px;
+	height: 0px;
+	border: 1px solid #d7d7d7;
+}
+/* buttom */
+.cont-login button{
+	width: 290px;
+	height: 44px;
+	background: #b40707;
+	font-size: 18px;
+	color: #fff;
+	border: none;
+	font-weight: bold;
+	margin: 20px 0;
+	cursor: pointer;
+}
+/* down text*/
+.info{
+	font-size: 12px;
+	width: 280px;
+	height: auto;
+	color: #999999;
+}
+.info h3{
+	margin: 10px 0;
+}
+ .cont-login .info p{
+ 	height:18px;
+	line-height: 18px;
+	margin: 0;
+}
+
+
+
+
+													/* content end */
+.downhr{
+	width: 80%;
+	height: 0;
+	margin:0 auto;
+	border:1px solid #d7d7d7;
+}
+footer{
+	padding:100px 0 20px;
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+	color: #999999;
+	text-align: center;
+}
+footer a{
+	color:#999 ;
+	text-decoration: underline ;
+}
+footer p{
+	font-size: 12px;
+	line-height: 24px;
+}

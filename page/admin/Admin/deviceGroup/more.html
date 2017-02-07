@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../../style/global/global.css">
+<style>
+.more{
+	width: 680px;
+	height: 360px;
+	box-shadow:  0 0px 10px 1px rgba(0, 0, 0, 0.1);
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 4px;
+}
+.more-tit{
+	position: relative;
+	width: 100%;
+	line-height: 34px;
+	height: 34px;
+	border-bottom: 1px solid #eee;
+}
+#close{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url('../../../imgs/u124.png') no-repeat;
+}
+.morecont{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 15px;
+	font-size: 14px;
+}
+.gpshow{
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 15px;
+	font-size: 14px;
+}
+.pimg{
+	float: left;
+	width: 378px;
+	height: 286px;
+}
+.pimg img{
+	width: 378px;
+	height: 230px;
+	box-shadow: 4px 4px 5px 2px rgba(160, 160, 160, 0.6);
+}
+.pimg p{
+	width: 378px;
+	height: 56px;
+	text-align: center;
+	line-height: 56px;
+}
+.pimg p a{
+	color: #6082ee;
+}
+.pinfo{
+	float: right;
+	width: 240px;
+	height: 230px;
+}
+.pinfo ul{
+	height: 100%;
+	color: #6e6e6e
+}
+.pinfo ul li {
+	height: 32px;
+
+}
+</style>
+</head>
+<body>
+	<div class="more">
+		<div class="more-tit">
+			<a id="close" href="javascript:"></a>
+		</div>
+		<p class="gpshow">设备屏幕：</p>
+		<div class="morecont clearfix">
+			<div class="pimg">
+				<img src="../../../imgs/u403.png" alt="">
+				<p><a href="javascript:">刷新状态</a></p>
+			</div>
+			<div class="pinfo">
+				<ul>
+					<li>设备名称：D100</li>
+					<li>设备状态：在线</li>
+					<li>系统：Windows</li>
+					<li>分辨率：1920×1080</li>
+					<li>设备尺寸：1920×1080</li>
+					<li>备注：五年级11班互通视窗</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="../../../js/jquery-3.1.1.min.js"></script>
+<script>
+//关闭
+$("#close").unbind("click");
+$("#close").bind("click",function(){
+
+});
+//刷新
+$(".pimg a").unbind("click");
+$(".pimg a").bind("click",function(){
+
+})
+</script>

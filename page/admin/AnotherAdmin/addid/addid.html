@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>互动视窗</title>
+	<link rel="stylesheet" href="../../../../style/global/top-btm.css">
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/admin/createuser.css">
+</head>
+<body  onLoad="Resize()" onResize="Resize()">
+<!-- top盒子 -->
+		<div class="top clearfix">
+			<div class="shy">
+				<div class="logo">
+					<img class="logoimg" src="../../../../imgs/tplogo.png" alt="">
+					<h1 class="tit">互动视窗系统</h1>
+				</div>
+				<div class="top-con">
+					<div class="top-tit">
+						<ul class="prom-title">
+							<li>
+								<a href="../userGroup/userGroup.html">人员分组</a>
+							</li>
+							<li>
+								<a href="../id/id.html">公共角色</a>
+							</li>
+							<li>
+								<a href="../user/user.html">人员管理</a>
+							</li>
+							<li>
+								<a href="../deviceGroup/deviceGroup.html">设备分组</a>
+							</li>
+							<li>
+								<a href="../deviceManagement/deviceManagement.html">设备配置</a>
+							</li>
+						</ul>
+					</div>
+					<div class="singleout">
+						当前用户:
+						<span>
+							管理员
+							<span class="selectybtn"></span>
+						</span>
+						<div id="singleOutBox" class="singleOutBox">
+							<div>
+								<a href="javascript:">个人资料</a>
+							</div>
+							<div>
+								<a href="javascript:">帮助中心</a>
+							</div>
+							<div>
+								<a class="outuser" href="javascript:">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+<!-- bottom盒子 -->
+		<div class="bottom-box">
+	<!-- 添加新身份 -->
+	<form class="tables" method="post" name="createRole" id="createRole" onsubmit="return check()" action="Role_addRole" >
+		<p class="username">
+			<span>身份名称: </span><input type="text" name="name" id="createName" onblur="checkIdName()" placeholder="请填写身份"><span></span>
+		</p>
+		<div id="bind" class="bind clearfix">
+			<p>添加权限:</p>
+			<div class="bind_cont">
+			<!-- 板块 -->
+				<div class="plate">
+					<p>权限</p>
+				</div>
+				<div class="clearfix">
+					<p  class="allt">节目管理</p>
+					<span class="jmRelease">节目制作</span>
+					<input type="checkbox" name="teacher" id="jmRelease">
+					<span class="j2">节目发布</span>
+					<input type="checkbox" name="teacher" id="j2">
+				</div>
+
+				<div class="clearfix">
+					<p  class="allt">版块管理</p>
+					<span class="bkRelease">板块制作</span>
+					<input type="checkbox" name="teacher" id="bkRelease">
+					<span class="teacher55">板块发布</span>
+					<input type="checkbox" name="teacher" id="teacher55">
+				</div>
+
+				<div class="clearfix">
+					<p class="allt">设备控制</p>
+				</div>
+
+				<div class="clearfix">
+					<p class="allt">播单管理</p>
+					<span class="bdRelease">设备播单</span>
+					<input type="checkbox" name="teacher" id="bdRelease">
+					<span class="tzRelease">通知管理</span>
+					<input type="checkbox" name="teacher" id="tzRelease">
+				</div>
+
+				<div class="clearfix">
+					<p  class="allt">专属版块</p>
+					<span class="dyRelease">德育</span>
+					<input type="checkbox" name="teacher" id="dyRelease">
+					<span class="kqRelease">考勤</span>
+					<input type="checkbox" name="teacher" id="kqRelease">
+				</div>
+				<!-- 验证后提示信息 -->
+				<div></div>
+			</div>
+		</div>
+
+
+
+		<div class="describe clearfix">
+			<p>职责描述:</p>
+			<textarea name="mark" placeholder="职责描述"></textarea>
+		</div>
+
+
+		<div>
+			<button class="submit">提交</button>
+			<a class="request" onclick="history.go(-1)">取消</a>
+		</div>
+	</form>
+
+
+	<!-- 分页 -->
+    <div id ="pagebar" style="text-align: center;width:100%" >
+        <ul class="pagination" id="pagination2"></ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script>
+// check user
+//单击显示隐藏 userbox
+		$(".selectybtn").bind("click",function(){
+			if($("#singleOutBox").is(":hidden")){
+				$(".selectybtn").css({"background-position":"0% 100%"});
+				$("#singleOutBox").show();
+			}else{
+				$(".selectybtn").css({"background-position":"0% 0%"});
+				$("#singleOutBox").hide();
+			};
+		});
+// 提交时验证
+function check(){
+	if($("#createName").val() == ""){
+		$("#createName").next().html("身份名称不能为空!");
+		return false;
+	};
+	//未选中绑定模块
+	if(!$('input[type="checkbox"]').is(':checked')){
+		$('.bind_cont div:last-child').html('权限未添加！');
+		return false;
+	};
+	// ok 写对了
+	return true;
+}
+
+function checkIdName(){
+	if($("#createName").val() == ""){
+		$("#createName").next().html("身份名称不能为空!");
+	}else{
+		$("#createName").next().html("");
+	};
+};
+$(function(){
+	//单机更换label样式
+	var bindLabel = $('.bind_cont span');
+	$(bindLabel).each(function(){
+			$(this).click(function(){
+						$('.bind_cont div:last-child').html('');
+						if(!$('#'+$(this).attr('class')).is(':checked')){
+								$('#'+$(this).attr('class')).attr("checked",true);
+								$(this).css({'background-color':'#6192d6','border-color':'#6192d6','color':'#fff'});
+						}else{
+								$('#'+$(this).attr('class')).attr("checked",false);
+								$(this).css({'background-color':'#fff','border-color':'#d9d9d9','color':'#d9d9d9'});
+						};
+			});
+	});
+
+	//全选
+	$(".allt").click(function(){
+		var inlength = $(this).parent().find("input");
+		var intrue = $(this).parent().find("input:checked");
+		if(inlength.length == intrue.length){
+			inlength.attr("checked",false);
+			$(this).parent().find("span").css({'background-color':'#fff','border-color':'#d9d9d9','color':'#d9d9d9'});
+		}else{
+			inlength.attr("checked",true);
+			$(this).parent().find("span").css({'background-color':'#6192d6','border-color':'#6192d6','color':'#fff'});
+		};
+	});
+
+
+
+
+});
+</script>

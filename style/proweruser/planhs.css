@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* 时间 */
+.time-h{
+	position: absolute;
+	padding-top: 3px;
+	z-index: 20;
+	background: #fff;
+	left: 0;
+	top: 45px;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	width:235px;
+
+}
+.time-h div{
+	font-size: 12px;
+	cursor: pointer;
+	float: left;
+	width: 20px;
+	margin: 0 0 3px 3px;
+	text-align: center;
+	color: #555;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 4px;
+	background: rgb(240, 240, 240);
+
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+.time-h div:hover{
+	background: #ccc;
+}
+/* 星期 */
+.seweek{
+	position: absolute;
+	top: 47px;
+	left: 0px;
+	box-sizing: border-box;
+	border: 1px solid #dfdfdf;
+	width: 100%;
+	padding-top: 2px;
+	z-index: 10;
+	background: #fff;
+}
+.seweek div{
+	cursor: pointer;
+	font-size: 12px;
+	float: left;
+	width: 55px;
+	margin: 0 1.5px 2px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	color: #555;
+	border-radius: 4px;
+	background: rgb(240, 240, 240);
+
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+.seweek div:hover{
+}
+.seweek  .sed{
+	background: #fafafa;
+	color: #989898;
+}
+.seweek div:nth-child(8){
+	color: #fff;
+	background: #00a2ca;
+}

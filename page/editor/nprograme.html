@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../style/global/global.css">
+	<link rel="stylesheet" href="../../style/proweruser/nprograme.css">
+</head>
+<body>
+<!-- 弹框盒子 -->
+<div class="alertBox">
+	<!-- title -->
+	<div class="alert-tit clearfix">
+		<h3>发布设备</h3>
+		<img class="close" src="../../imgs/close.png" alt="">
+	</div>
+	<!-- content -->
+	<div class="alert-con clearfix">
+
+
+
+<div class="conbox">
+			<form class="protab" action="">
+				<div>
+					<p>节目名称:</p>
+					<input type="text" name="" value="">
+				</div>
+				<div>
+					<p>设置比例:</p>
+					<select id="selt" name="set">
+						<option value="1920*1080">1920 * 1080</option>
+						<option value="1600*900">1600 * 900</option>
+						<option value="1366*768">1366 * 768</option>
+						<option value="0">自定义</option>
+					</select>
+					<p id="hidep" style="display: none;">
+						<input placeholder="宽:" class="hideinput hideinputW" type="text">
+						<input placeholder="高:" class="hideinput hideinputH" type="text">
+					</p>
+				</div>
+				<div>
+					<p>备注:</p>
+					<textarea name="" maxlength="50"></textarea>
+					<p>(最多五十汉字)</p>
+				</div>
+				<div>
+					<button type="submit">确定</button>
+					<a href="javascript:">取消</a>
+				</div>
+			</form>
+		</div>
+
+
+
+	</div>
+	</div>
+</body>
+</html>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script>
+	$('#selt').change(function(){
+	 			if($(this).val() == '0'){
+	 				$('#hidep').show(500);
+	 			}else{
+	 				$('#hidep').hide(500);
+	 			}
+	 		});
+	 		$('.hideinput').keyup(function(){
+	 			var c=$(this);
+        if(/[^\d]/.test(c.val())){//替换非数字字符
+         var temp_amount=c.val().replace(/[^\d]/g,'');
+         $(this).val(temp_amount);
+        }
+        if(this.value.length>4){
+        	this.value=this.value.substr(0,4);
+        };
+        	this.value=this.value.replace(/[^\d]/g,'');
+	 		});
+	 		$('.hideinput').blur(function(){
+	 				// 宽高不为空时 执行添加 修改
+	 			if($('.hideinput:eq(0)').val() != "" &&  $('.hideinput:eq(1)').val() != "") {
+	 				// 获取option 长度
+	 				var optionLength = $('#selt option').length;
+	 					var W = $('.hideinputW').val();
+			 			var H = $('.hideinputH').val();
+			 			// 只能有5个option
+		 			if (optionLength < 5){
+		 				var $htmlOption = $("<option value='"+ W +" * "+H +"' selected>"+ W +" * "+H +"</option>");
+			 			$('#selt > option:last-child').after($htmlOption);
+		 			}else{
+		 				$('#selt > option:last-child').val(W+" * "+H);
+		 				$('#selt > option:last-child').html(W+" * "+H);
+		 			};
+	 			};
+	 		});
+</script>

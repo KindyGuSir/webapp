@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../style/global/global.css">
+	<link rel="stylesheet" href="../../style/proweruser/addplate.css">
+</head>
+<body>
+<!-- 弹框盒子 -->
+<div class="alertBox">
+	<!-- title -->
+	<div class="alert-tit clearfix">
+		<h3>添加板块</h3>
+		<img class="close" src="../../imgs/close.png" alt="">
+	</div>
+	<!-- content -->
+	<div class="alert-con clearfix">
+
+	<p>我的节目</p>
+	<div class="plate clearfix">
+	<form action="##" class="clearfix">
+
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+		<div>
+			<div>
+				<img src="../../imgs/u32.png" alt="">
+			</div>
+			<input type="checkbox" >
+			<p>六一儿童节</p>
+			<div class="addimg"></div>
+		</div>
+
+
+
+	</form>
+	</div>
+	<p>添加一个节目作为当前节目的一个版块</p>
+
+
+	<!-- 按钮 -->
+	<div class="plateButton">
+		<button type="submit">确定</button>
+		<a href="javascript:">取消</a>
+	</div>
+
+	</div>
+	</div>
+</body>
+</html>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script>
+// 点击选中input
+	$('.plate div:nth-child(1) img').click(function(){
+		var inputs = $(this).parent().next();
+		if ( inputs.prop('checked') ){
+			inputs.prop('checked',false);
+			inputs.next().next('div').hide();
+		}else{
+			 inputs.prop('checked',true);
+			 inputs.next().next('div').show();
+		}
+	})
+</script>

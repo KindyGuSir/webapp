@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>用户管理</title>
+	<link rel="stylesheet" href="../../../../style/admin/deviceManagement.css">
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/global/top-btm.css">
+</head>
+<body>
+			<!-- top盒子 -->
+		<div class="top clearfix">
+			<div class="shy">
+				<div class="logo">
+					<img class="logoimg" src="../../../../imgs/tplogo.png" alt="">
+					<h1 class="tit">互动视窗系统</h1>
+				</div>
+				<div class="top-con">
+					<div class="top-tit">
+						<ul class="prom-title">
+							<li>
+								<a href="../userGroup/userGroup.html">人员分组</a>
+							</li>
+							<li>
+								<a href="../id/id.html">公共角色</a>
+							</li>
+							<li>
+								<a href="../user/user.html">人员管理</a>
+							</li>
+							<li>
+								<a href="../deviceGroup/deviceGroup.html">设备分组</a>
+							</li>
+							<li>
+								<a href="../deviceManagement/deviceManagement.html">设备配置</a>
+							</li>
+						</ul>
+					</div>
+					<div class="singleout">
+						当前用户:
+						<span>
+							管理员
+							<span class="selectybtn"></span>
+						</span>
+						<div id="singleOutBox" class="singleOutBox">
+							<div>
+								<a href="javascript:">个人资料</a>
+							</div>
+							<div>
+								<a href="javascript:">帮助中心</a>
+							</div>
+							<div>
+								<a class="outuser" href="javascript:">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- bottom盒子 -->
+		<div class="bottom-box">
+		<div class="btn">
+			<a href="../createEquipment/createEquipment.html" class="adduser">添加设备</a>
+			<a class="edituser delete" href="../createEquipment/createEquipment.html?id=">编辑</a>
+			<a class="delete">删除</a>
+		</div>
+		<!-- 表单 -->
+		<div class="idcard">
+			<table  id="idtable">
+				<form action="##" name="idcard">
+				<tr class="table-tit">
+					<th><span id="checkall">全选</span></th>
+					<th>序号</th>
+					<th>地址</th>
+					<th>状态</th>
+					<th>所属分组</th>
+					<th>负责人</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="1"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="2"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="3"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="4"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="5"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="6"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="check1" value="7"></td>
+					<td>1</td>
+					<td>192.168.1.100</td>
+					<td>在线</td>
+					<td>初一一班</td>
+					<td>李老师</td>
+				</tr>
+				</form>
+			</table>
+		</div>
+		<!-- 分页 -->
+		<div class="gopage">
+			<div class="clearfix">
+				<a class="nonepage" href="?id=">上一页</a>
+				<a class="nowpage" href="?id=">1</a>
+				<a href="?id=">2</a>
+				<a href="?id=">3</a>
+				<a href="?id=">4</a>
+				<a href="?id=">5</a>
+				<a href="?id=">6</a>
+				<a href="?id=">7</a>
+				<a href="?id=">8</a>
+				<a href="?id=">下一页</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script>
+	//选中一个点击编辑才会弹框
+	$('.edituser').click(function(){
+		var boxs = $('input[type="checkbox"]:checked');
+		if(boxs.length != 1){
+			return false;
+		}
+		var aSrc = $('.edituser').attr('href');
+		$('.edituser').attr('href',aSrc+boxs.val());
+	});
+	//全选 取消全选
+	// var checkall = document.getElementById('checkall');
+	// console.log(boxs);
+	// checkall.onclick = function(){
+	// 	if( boxs.length != keds.length ){
+	// 		for( i=0; i<boxs.length; i++ ){
+	// 			boxs[i].checked = true;
+	// 		}
+	// 	}else{
+	// 		for ( i=0; i<boxs.length; i++ ){
+	// 			boxs[i].checked = false;
+	// 		}
+	// 	};
+	// };
+	$("#checkall").click(function(){
+		var boxs = $('#idtable input');
+		var keds = $('#idtable input:checked');
+    if( boxs.length == keds.length ){
+        $("input[name='check1']").attr('checked', false);
+    }else{
+        $("input[name='check1']").attr('checked', true);
+    };
+  });
+</script>
+</html>

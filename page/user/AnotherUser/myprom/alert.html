@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/global/iframeglobal.css">
+	<link rel="stylesheet" href="../../../../style/user/AnotherUser/alert.css">
+	<style>
+		h2 {
+			line-height: 30px;
+			font-size: 20px;
+		}
+		a, a:hover {
+			text-decoration: none;
+		}
+		pre {
+			font-family: '微软雅黑'
+		}
+		.box {
+			width: 970px;
+			padding: 10px 20px;
+			background-color: #fff;
+			margin: 10px auto;
+		}
+		.box a {
+			padding-right: 20px;
+		}
+		ul{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+<!-- 重新发布 w674 h483-->
+<div class="alertBox">
+	<div class="alert-con clearfix">
+		<div class="alert-left">
+			<div class="left-one">
+				<div class="left-search">
+					<input type="text">
+					<img src="../../../../imgs/search.png" alt="">
+				</div>
+				<div class="left-device">
+					<ul class="uls">
+						<li>101(在线)</li>
+						<li>102(在线)</li>
+						<li>103(在线)</li>
+						<li>104(在线)</li>
+						<li>105(在线)</li>
+						<li>106(在线)</li>
+						<li>107(在线)</li>
+						<li>108(在线)</li>
+					</ul>
+				</div>
+				<a class="addall" href="##">添加全部</a>
+			</div>
+			<img class="right-jt" src="../../../../imgs/u275.png" alt="">
+			<div class="left-two">
+				<h3>已选设备</h3>
+				<div class="right-device">
+					<ul class="devices">
+						<li><span>101(在线)</span><a href="javascript:"></a></li>
+						<li><span>102(在线)</span><a href="javascript:"></a></li>
+						<li><span>103(在线)</span><a href="javascript:"></a></li>
+						<li><span>104(在线)</span><a href="javascript:"></a></li>
+					</ul>
+				</div>
+				<a class="moveall" href="##">移除全部</a>
+			</div>
+		</div>
+		<!-- 时间插件 -->
+		<div class="alert-right">
+			<h3>选择播放时间策略:</h3>
+			<div class="setTime">
+					<ul>
+						设置开始日期：<li class="laydate-icon" id="start" style="width:200px; margin-right:10px;"></li>
+						设置结束日期：<li class="laydate-icon" id="end" style="width:200px;"></li>
+					</ul>
+			</div>
+			<!-- 播放类型 -->
+			<h3>选择播放类型:</h3>
+				<div class="daily clearfix">
+					<span><input type="radio" name="prom" value="日常节目" checked>日常节目</span>
+				</div>
+				<div class="daily clearfix">
+					<span><input type="radio" name="prom" value="插播节目">插播节目</span>
+				</div>
+		</div>
+	</div>
+	<div class="btn">
+		<a class="delete" href="javascript:">取消</a>
+		<a class="enter" href="##">确定</a>
+	</div>
+	</div>
+</body>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script src="../../../../js/laydate/laydatea.js"></script>
+<script>
+$('.delete').click(function(){
+	$(this).parent().parent().hide();
+});
+// 点击左边li移动到右侧已选设备中
+function adddevice(){
+	$(".uls").children("li").each(function(){
+		$(this).unbind("click");
+		$(this).bind("click",function(){
+			//获取html内容
+			var listr ='<li>'
+			+'<span>'
+			+ $(this).html()
+			+ '</span>'
+			+'<a href="javascript:"></a>'
+			+'</li>';
+			$(".devices").append(listr);
+			remuls();
+		});
+	});
+};
+adddevice();
+// 点击右边li移动到左侧设备中
+function remuls(){
+	$(".devices").find("li").children("a").each(function(){
+		$(this).unbind("click");
+		$(this).bind("click",function(){
+			$(this).parent().remove();
+		});
+	});
+};
+remuls();
+// 点击全部添加到右侧已选设备
+$('.addall').click(function(){
+	//获取html内容
+	$('.uls').children('li').each(function(){
+		var listr ='<li>'
+		+'<span>'
+		+ $(this).html()
+		+ '</span>'
+		+'<a href="javascript:"></a>'
+		+'</li>';
+		$(".devices").append(listr);
+	});
+	remuls();
+});
+// 点击移除全部到左侧设备
+$('.moveall').click(function(){
+	$('.devices').children('li').remove();
+});
+// 点击关闭图片关闭当前alert
+$('.close').click(function(){
+	$(this).parent().parent().parent().hide();
+})
+
+// 时间插件
+var start = {
+  elem: '#start',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: laydate.now(), //设定最小日期为当前日期
+  max: '2099-06-16 23:59:59', //最大日期
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+     end.min = datas; //开始日选好后，重置结束日的最小日期
+     end.start = datas //将结束日的初始值设定为开始日
+  }
+};
+var end = {
+  elem: '#end',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: laydate.now(),
+  max: '2099-06-16 23:59:59',
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+    start.max = datas; //结束日选好后，重置开始日的最大日期
+  }
+};
+laydate(start);
+laydate(end);
+</script>
+</html>

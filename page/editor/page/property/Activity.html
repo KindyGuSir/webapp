@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="../../css/property_2.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+	    // 右上角的用户信息显示
+		function getUrlParameter( name ){
+			name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			var regexS = "[\\?&]"+name+"=([^&#]*)";
+			var regex = new RegExp( regexS );
+			var results = regex.exec(window.parent.location.href );
+			if(results == null)return "";  
+			else {
+			   return results[1];
+			}
+		} 
+		function checkAccordionPos(){
+			var quick=getUrlParameter('quick');
+		   	if(quick=='1'){
+		    	var pos = document.getElementById("pos");
+		    	pos.style.display = 'none';
+                var div_update = document.getElementById("div_update");
+                div_update.style.display = 'block';
+		    }
+		}
+    </script>
+</head>
+<body onload="checkAccordionPos()">
+<container>
+    <header>
+        <span  class="scrollImg_comp_prpt"></span><label>班级活动</label>
+    </header>
+    <section class="pos_size" id='pos'>
+        <nav class="prpt_nav">
+            <span></span><label>位置大小</label>
+        </nav>
+        <container>
+            <ul>
+                <li><span>X</span><input type="text" id="xVal" name="valEl" /></li>
+                <li><span>Y</span><input type="text" id="yVal" name="valEl" /></li>
+            </ul>
+            <ul>
+                <li><span>W</span><input type="text" id="wVal" name="valEl" /></li>
+                <li><span>H</span><input type="text" id="hVal" name="valEl" /></li>
+            </ul>
+        </container>
+    </section>
+    <section class="check prpt_set">
+        <nav class="prpt_nav">
+            <span></span><label>属性</label>
+        </nav>
+        <container>
+            <div class="commonProp">
+                <dl>
+                    <dd style="display: none">
+                        <label>标题:</label>
+                        <input type="text" class="activityType" maxlength="50" id="activity_type" name="valEl" value="班级活动"/>
+                    </dd>
+                </dl>
+            </div>
+            <div class="classSlect">
+                选择班级:<select class="className" id="classId" name="valEl"></select>
+            </div>
+                <div id="imgList_outer" class="imgList_outer">
+                    <div id="imgList" class="imgList">
+                    </div>
+                    <div class="scroll_item">
+                        <img src="" class="scroll_item_img" />
+                        <div>
+                            <input type="text" class="scroll_id_input" hidden="true"/>
+                        </div>
+                        <div>
+                            <input type="text" class="scroll_info_input" onchange="limitLength(this);" onkeyup="limitLength(this);"/>
+                        </div>
+                        <div class="scroll_item_opr">
+                            <!--<span class="scroll_item_moveUp"></span>
+                            <span class="scroll_item_moveDwn"></span>-->
+                            <span class="scroll_item_del"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="add_activity" class="newImg" title="添加活动"><span></span></div>
+                <div class="effect" style="display:none;">
+                    显示效果:<select class="effect" id="effect" name="valEl">
+                                    <option value="0">淡入</option>
+                                    <option value="1">左右滑动</option>
+                                    <option value="2">上下滚动</option>
+                            </select>
+                </div>
+            <div id="div_update" class="div_update"><a href="#" style="text-decoration: none;"><div id="program_update" class="program_update"><label class="upd_label" >更新</label></div></a></div>
+
+            <!--                <div class="scroll_item">
+                    <div class="activitysProp">
+                        <div class="uploadFile"><img class="fileSrc" width="80px" height="94px" src="" /></div>
+                        <div class="activitysInfo">
+                            <label>图片描述:</label>
+                            <input type="text" class="description" maxlength="500" name="valEl"/>
+                        </div>
+                    </div>
+                    <div class="scroll_item_opr">
+                        <span class="scroll_item_moveUp"></span>
+                        <span class="scroll_item_moveDwn"></span>
+                        <span class="scroll_item_del"></span>
+                    </div>-->
+                </div>
+        </container>
+    </section>
+</container>
+
+<script src="../../js/view/propertyBar/commonPrpty.js"></script>
+<script type="text/javascript">
+    function limitLength(obj) {
+        if (obj.value.length > 140) {
+            obj.value = obj.value.substring(0, 140);
+        }
+    }
+</script>
+</body>
+</html>

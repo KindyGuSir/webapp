@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* left select div */
+
+.gwidth{
+	height: 100%;
+	margin-right: 0 2%;
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+}
+.group-l,.group-r{
+	min-height: 100%;
+	box-sizing: border-box;
+}
+.group-l{
+	border-right: 1px solid #D8D8D8;
+	flex-basis: 225px;
+	color: #202020;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	flex-basis: 324px;
+	-webkit-flex-basis: 324px;
+	-moz-flex-basis: 324px;
+	-o-flex-basis: 324px;
+}
+.group-l-tit{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 38px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+}
+/* 文本不可选 */
+#group-se a,#group-se span{
+	-moz-user-select:none;/*火狐*/
+	-webkit-user-select:none;/*webkit浏览器*/
+	-ms-user-select:none;/*IE10*/
+	-khtml-user-select:none;/*早期浏览器*/
+	user-select:none;
+}
+/* 悬浮工具 */
+.idus{
+	position: absolute;
+	top: 0;
+	right: 0%;
+	display: inline-block;
+	width: 78px;
+	height: 32px;
+	background: #fff;
+}
+.anug,.delg,.reng{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: 8px;
+	margin-right: 5px;
+}
+.anug{
+	background: url('../../imgs/groupadd.png');
+}
+.delg{
+	background: url('../../imgs/groupdel.png');
+}
+.reng{
+	background: url('../../imgs/groupren.png');
+}
+
+
+/* 下拉列表 */
+#group-se{
+	width: 100%;
+	padding-left: 38px;
+	box-sizing: border-box;
+	overflow-x:auto;
+}
+#group-se li > div{
+	color: #202020;
+	cursor: pointer;
+}
+#group-se li > div:hover{
+	color: #286091;
+}
+#group-se ul{
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+}
+#group-se > li > ul  {
+	padding-left: 20px;
+	width: 285px;
+}
+#group-se > li > ul > li > ul{
+	padding-left: 20px;
+}
+#group-se > li > ul > li > ul > li > ul{
+	padding-left: 20px;
+}
+#group-se div{
+	position: relative;
+	box-sizing: border-box;
+	padding-left: 16px;
+	height: 42px;
+	line-height: 42px;
+	width:100%;
+	font-size: 14px;
+	overflow: hidden;
+}
+#group-se div > span:first-child > a{
+	position: absolute;
+	top: 13px;
+	left: 0;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url('../../imgs/groupsh.png') no-repeat;
+}
+
+/* 默认隐藏下级分组 */
+#group-se > li  ul{
+	display: none;
+}
+/* 未分组 */
+.unclassified{
+	width: 247px;
+	cursor: pointer;
+}
+.unclassified a{
+	color:#202020;
+}
+
+/* 滑上显示编辑工具 */
+#group-se div > span:nth-child(2){
+	visibility: hidden;
+}
+#group-se div:hover span:nth-child(2){
+	visibility: visible;
+}
+
+/* right list div */
+.group-r{
+	padding-top:30px;
+	box-sizing:border-box;
+	float: right;
+	padding-left:  2%;
+	flex: 1;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-o-flex: 1;
+}
+
+/* 表格上方按钮搜索框 */
+.group-list{
+	width: 100%;
+	height: 32px;
+	color: #959595;
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+.group-list > a{
+	display: inline-block;
+	padding: 0 22px;
+	background: #6192d6;
+	height: 32px;
+	border-radius: 3px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #fff;
+}
+.group-list > a:nth-child(2){
+	color: #6192d6;
+	background: #fff;
+	box-sizing: border-box;
+	line-height: 30px;
+	border: 1px solid #6192d6;
+	visibility: hidden;
+	padding:0 15px 0 30px;
+	background: url('../../imgs/del.png') no-repeat;
+	background-position: 7px 6px;
+}
+.suname{
+	float: right;
+	width: 290px;
+	height: 30px;
+	border: 1px solid #eee;
+	border-radius: 3px;
+}
+.suname input{
+	width: 257px;
+	box-sizing: border-box;
+	padding-left: 10px;
+	height: 30px;
+	background-color: transparent;
+	border: none;
+}
+.suname a{
+	display:inline-block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	border-left:1px solid #eee;
+	background: url("../../imgs/search.png") no-repeat;
+	background-size: 20px 20px;
+	background-position: 5px 5px;
+}
+/* 已选人数 */
+.senum{
+	width: 100%;
+	font-size: 14px;
+	color: #6e6e6e;
+	margin-bottom: 10px;
+}
+/* 表格 */
+#g-tab tr td{
+	position: relative;
+}
+#g-tab tr td:nth-child(7) a{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -8px;
+	margin-left: -8px ;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url("../../imgs/u117.png") no-repeat;
+}
+.tb{min-height: 600px;}
+.group-r table{
+	width: 100%;
+	color: #959595;
+	border-collapse: collapse;
+}
+.group-r table input{
+	margin-top: 10px;
+}
+.group-r table th{
+	background: #f9f9f9;
+	height: 46px;
+	line-height: 30px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #aaa;
+	cursor: pointer;
+}
+.group-r table tr{
+	border: 1px solid #eee;
+}
+.group-r table tr:hover{
+	background: #f9f9f9;
+}
+.group-r table td{
+	text-align: center;
+	height: 56px;
+	line-height:26px;
+	font-size: 12px;
+}
+.group-r table td a{
+	color: #6082ee;
+}
+

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>播单查询</title>
+	<link rel="stylesheet" href="../../../../style/global/test2.css">
+	<link rel="stylesheet" href="../../../../style/global/global.css">
+	<link rel="stylesheet" href="../../../../style/global/iframeglobal.css">
+	<link rel="stylesheet" href="../../../../style/proweruser/current.css">
+</head>
+<body>
+	<!-- top -->
+	<div class="top">
+	<div class="top-c">
+		<div class="logo">
+			<img class="logoimg" src="../../../../imgs/tplogo.png" alt="">
+			<h1 class="tit">互动视窗系统</h1>
+		</div>
+		<div class="top-con">
+			<div class="top-tit">
+				<h1>为中国教育崛起而努力 同心共筑教育强国梦</h1>
+			</div>
+			<div class="singleout">
+				当前用户:
+				<span>
+					设备管理员
+					<span class="selectBox">
+						<a href="javascript:" id="selectybtn" class="selectbtn"></a>
+					</span>
+				</span>
+				<div id="singleOutBox" class="singleOutBox">
+						<div><a href="javascript:">个人资料</a></div>
+						<div><a href="javascript:">帮助中心</a></div>
+						<div><a class="outuser" href="javascript:">注销</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+<!-- pageCont -->
+<div class="pageCont">
+	<!-- left -->
+	<div class="left">
+	<div class="left-con">
+		<div id="firstpane" class="menu_list">
+			<h3 class="menu_head current"><img src="../../../../imgs/h3-person.png" alt=""> 节目管理</h3>
+			<div class="menu_body">
+				<a href="../../poweruser/myprom/myprogram.html"><span >我的节目</span></a>
+				<a href="../../poweruser/release/releasecontrol.html"><span>发布管理</span></a>
+				<a href="../../poweruser/publicprom/publicprogram.html"><span>公共节目</span></a>
+			</div>
+			<h3 class="menu_head"> <img src="../../../../imgs/h3-prom.png" alt=""><a href="../../poweruser/promsearch/currentmulitc.html"><span>播单查询</span></a></h3>
+			<h3 class="menu_head"> <img src="../../../../imgs/h3-email.png" alt=""><a href="../../poweruser/notice/noticetz.html"><span>通知管理</span></a></h3>
+			<h3 class="menu_head"> <img src="../../../../imgs/h3-device.png" alt=""><a href="../../poweruser/devicecontrol/controldev.html">设备控制</a></h3>
+		</div>
+		</div>
+	</div><!-- left end -->
+	<!-- right -->
+	<div class="right">
+	<div class="right-con">
+
+
+
+
+
+	<!-- fd flex布局 -->
+	<div class="fd">
+	<!-- mydevice -->
+		<div class="mydevice">
+			<h3>我的设备:</h3>
+			<ul>
+				<li>
+					<p>
+						<img src="../../../../imgs/u285.png" alt="">
+						<span>101(在线)</span>
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="../../../../imgs/u285.png" alt="">
+						<span>101(在线)</span>
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="../../../../imgs/u285.png" alt="">
+						<span>101(在线)</span>
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="../../../../imgs/u285.png" alt="">
+						<span>101(在线)</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<!-- 右侧弹性盒子 -->
+		<div class="right-con">
+			<!-- 时间轴插件 -->
+			<h3 class="timeaxis">播放时间轴</h3>
+			<!-- R代表常规 S代表插播 -->
+			<div class="course">
+				<div class="clearfix web_widht course_nr">
+					<div class="line"></div>
+					<ul class="course_nr2">
+						<li>
+							6:00
+							<div class="shiji">
+								<h1>6:00</h1>
+								<p>
+									<p>早上6点节目</p>
+								</p>
+							</div>
+						</li>
+
+						<li>
+							10:00
+							<div class="shiji">
+								<h1>10:30</h1>
+								<p>
+									<p>早上6点节目</p>
+								</p>
+							</div>
+						</li>
+
+						<li class="spots">
+							11:30
+							<div class="shiji">
+								<h1>11:30</h1>
+								<p>
+									<p>早上6点节目</p>
+								</p>
+							</div>
+						</li>
+
+						<li class="spots">
+							20:55
+							<div class="shiji">
+								<h1>20:55</h1>
+								<p>
+									<p>早上6点节目</p>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 插件结束 -->
+
+			<!-- 设备播单 -->
+			<div class="single">
+				<h3>设备播单</h3>
+				<div class="checks"><input type="checkbox"><span>全选</span> <a id="delete" href="##">删除</a></div>
+				<table id="device-single" class="device-single">
+					<tr class="table-tit">
+						<th><input type="checkbox" style='display: none;'></th>
+						<th class="prom">节目</th>
+						<th>播放时段</th>
+						<th>节目类型</th>
+						<th>发布人</th>
+						<th>发布日期</th>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td><img src="../../../../imgs/jy.png" alt="">校领导寄语</td>
+						<td>2016.1.1-2017.1  16:00-8:00</td>
+						<td>插播节目</td>
+						<td>王富贵</td>
+						<td>2016-11-10 11:05</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td><img src="../../../../imgs/liuyi.jpg" alt="">校领导寄语</td>
+						<td>2016.1.1-2017.1  16:00-8:00</td>
+						<td>插播节目</td>
+						<td>王富贵</td>
+						<td>2016-11-10 11:05</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td><img src="../../../../imgs/jy.png" alt="">校领导寄语</td>
+						<td>2016.1.1-2017.1  16:00-8:00</td>
+						<td>插播节目</td>
+						<td>王富贵</td>
+						<td>2016-11-10 11:05</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td><img src="../../../../imgs/jainghau.jpg" alt="">校领导寄语</td>
+						<td>2016.1.1-2017.1  16:00-8:00</td>
+						<td>插播节目</td>
+						<td>王富贵</td>
+						<td>2016-11-10 11:05</td>
+					</tr>
+				</table>
+				<!-- 分页 -->
+					<div class="gopage">
+						<div class="clearfix">
+							<a class="nonepage" href="?id=">上一页</a>
+							<a class="nowpage" href="?id=">1</a>
+							<a href="?id=">2</a>
+							<a href="?id=">3</a>
+							<a href="?id=">4</a>
+							<a href="?id=">5</a>
+							<a href="?id=">6</a>
+							<a href="?id=">7</a>
+							<a href="?id=">8</a>
+							<a href="?id=">下一页</a>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!-- fd end -->
+
+
+
+	</div><!-- right-con end -->
+	</div><!-- right end -->
+</div><!-- pageCont -->
+</body>
+</html>
+<script src="../../../../js/jquery-3.1.1.min.js"></script>
+<script src="../../../../js/test.js"></script>
+<script src="../../../../js/layer/layer.min.js"></script>
+<script>
+	// 点击删除弹框
+	$('#delete').click(function(){
+		var unCheckTrue = $('.device-single').find('input:checked');
+		if ( unCheckTrue.length == 0 ){
+			layer.alert('请选择至少一条节目删除')
+		}else{
+			layer.alert('您确定要删除吗？')
+		}
+	});
+	// 时间轴滑过特效
+	$('.course_nr2 li').hover(function(){
+		$(this).find('.shiji').stop().slideDown(500);
+	},function(){
+		$(this).find('.shiji').stop().slideUp(500);
+	});
+	// 全选/取消全选
+	$('.checks').find('input').click(function(){
+		if ( this.checked ){
+			$('#device-single td input').prop('checked',true);
+		}else{
+			$('#device-single td input').prop('checked',false);
+		}
+		checkInput();
+	});
+	//单选
+	$('#device-single td input').click(function(){
+		checkInput();
+	});
+	function checkInput(){
+		var numTrue = 0;
+		$('#device-single td input').each(function(){
+			if($(this).prop("checked")){
+				$(this).parent().parent().css({'background':'#f9f9f9'});
+				numTrue += 1;
+			}else{
+				$(this).parent().parent().css({'background':''});
+			};
+		});
+		if(numTrue != $('#device-single td input').length){
+			$('.checks').find('input').prop("checked",false);
+		}else{
+			$('.checks').find('input').prop("checked",true);
+		}
+	}
+	// 时间轴定位
+	$(".course_nr2 li").each(function(){
+		var pTime = $(this).find("h1").html();
+		pTime = pTime.split(":");
+		pTime = (parseInt(pTime[0]) * 60) + parseInt(pTime[1]); //分钟数
+		var thisLeft = pTime-360;
+		$(this).css({"left":thisLeft + "px"});
+	});
+</script>

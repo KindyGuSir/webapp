@@ -1,0 +1,314 @@
+/* 通用样式 */
+@charset "utf-8";
+
+html {
+	font-family: "微软雅黑";
+}
+body, ul, ol, li, dl, dt, h1, h2, h3, h4, h5, h6, p, textarea, select, figure {
+	margin: 0;
+	padding: 0;
+}
+ul, ol {
+	list-style: none;
+}
+textarea {
+	resize: none;
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+a {
+	text-decoration: none;
+	color: #6192D6;
+	-webkit-tap-highlight-color: transparent;
+}
+html {
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: transparent;
+}
+b {
+	font-weight: normal;
+}
+.clearfix::after, .clearfix::before {
+	content: "";
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+}
+button{
+	font-family: '微软雅黑';
+	background: #6192D6;
+	border: none;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 4px;
+	padding: 0 20px;
+	text-align: center;
+	line-height: 28px;
+	cursor: pointer;
+	height: 28px;
+}
+/* iframe分页公共样式 */
+.gopage{
+	height: 36px;
+	text-align: center;
+	padding: 2px;
+	margin: 30px 0;
+}
+.gopage a:first-child{
+	width: 70px;
+	border: 1px solid #cecece;
+	border-radius: 5px 0 0 5px;
+
+}
+.gopage a:last-child{
+	width: 70px;
+	border-left: none;
+	border-radius: 0 5px 5px 0;
+}
+.gopage a{
+	float: left;
+	font-size: 12px;
+	width: 33px;
+	height: 34px;
+	color:#929292;
+	display: inline-block;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 34px;
+	border: 1px solid #cecece;
+	border-left: none;
+}
+.gopage div{
+	margin: 0 auto;
+	display: inline-block;
+	width: auto;
+	height: 36px;
+}
+
+.gopage .nowpage{
+	background: #efefef;
+}
+.gopage .nonepage{
+	color: #ddd;
+	border-color: #ddd;
+}
+
+/* 按钮 */
+.btn{
+	width: 96%;
+	margin: 20px 2% 0;
+}
+.btn a{
+	background: #00a2ca none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 22px;
+  cursor: pointer;
+}
+.btn .delete{
+	background: #fff none repeat scroll 0 0;
+  border: 1px solid #4e97ff;
+  box-sizing: border-box;
+  color: rgba(17, 151, 225, 1);
+  line-height: 30px;
+	cursor: pointer;
+}
+
+
+.btn .btnmu{
+	visibility: hidden;
+	margin-left: 8px;
+}
+.btn .btnmu a{
+	border-radius: 0px;
+	margin-left: -6px;
+}
+.btn .btnmu a:first-child{
+	border-radius: 4px 0 0 4px;
+}
+.btn .btnmu a:last-child{
+	border-radius: 0 4px 4px 0;
+}
+/* top导航位置 */
+.user-tit{
+	width: 96%;
+	height: 36px;
+	line-height: 36px;
+	font-size: 12px;
+	border-bottom: 1px solid #D8D8D8;
+	padding-left: 20px;
+	margin:0 2%;
+	box-sizing: border-box;
+	color: #666666;
+}
+.user-tit img{
+	padding-top: 8px;
+	padding-right: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.editarea{
+	padding-left: 33px;
+	padding-top: 54px;
+	font-size: 14px;
+	color: #4F4F4F;
+}
+
+.editarea p span:last-child,.bind_cont div:last-child{
+	display: inline-block;
+	margin-left: 15px;
+	font-size: 12px;
+	line-height: 32px;
+}
+
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px
+}
+
+.pagination>li {
+	display: inline
+}
+
+.pagination>li>a,.pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	text-decoration: none;
+	color: #929292;
+	background-color: #fff;
+	border: 1px solid #cecece;
+	margin-left: -1px
+}
+
+.pagination>li:first-child>a,.pagination>li:first-child>span {
+	margin-left: 0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px
+}
+
+.pagination>li:last-child>a,.pagination>li:last-child>span {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px
+}
+
+.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover {
+	color: #929292;
+	background-color: #fff;
+	border-color: #cecece
+}
+
+.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover {
+	z-index: 2;
+	color: #929292;
+	background-color: #efefef;
+	border-color: #cecece;
+	cursor: default
+}
+
+.pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover {
+	color: #d0d0d0;
+	background-color: #fff;
+	border-color: #cecece;
+	cursor: not-allowed
+}
+
+.pagination-lg>li>a,.pagination-lg>li>span {
+	padding: 10px 16px;
+	font-size: 18px
+}
+
+.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span {
+	border-bottom-left-radius: 6px;
+	border-top-left-radius: 6px
+}
+
+.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span {
+	border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px
+}
+
+.pagination-sm>li>a,.pagination-sm>li>span {
+	padding: 5px 10px;
+	font-size: 12px
+}
+
+.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px
+}
+
+.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span {
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px
+}
+
+.pager {
+	padding-left: 0;
+	margin: 20px 0;
+	list-style: none;
+	text-align: center
+}
+
+.pager li {
+	display: inline
+}
+
+.pager li>a,.pager li>span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 15px
+}
+
+.pager li>a:focus,.pager li>a:hover {
+	text-decoration: none;
+	background-color: #eee
+}
+
+.pager .next>a,.pager .next>span {
+	float: right
+}
+
+.pager .previous>a,.pager .previous>span {
+	float: left
+}
+
+.pager .disabled>a,.pager .disabled>a:focus,.pager .disabled>a:hover,.pager .disabled>span {
+	color: #999;
+	background-color: #fff;
+	cursor: not-allowed
+}

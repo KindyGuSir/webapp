@@ -1,0 +1,274 @@
+@charset 'utf-8';
+/* top */
+body{
+	color: #525252;
+}
+.new-tit{
+	border-bottom: 1px solid #ccc;
+  margin: 40px auto 0;
+  min-width: 1000px;
+  padding-bottom: 10px;
+  width: 96%
+}
+.new-tit h3{
+	font-weight: normal;
+}
+.new-tit a{
+	float: right;
+	font-size: 14px;
+	padding-top: 6px;
+}
+/* content */
+.new-con{
+	width: 96%;
+	margin: 20px auto 0;
+	min-width: 1000px;
+	position: relative;
+}
+.conts:nth-child(1){
+	margin-left: 10%;
+}
+.conts{
+	min-width: 400px;
+	float: left;
+	width: 40%;
+	height: 450px;
+}
+.new-con form{
+	font-size: 14px;
+	min-width: 400px;
+}
+/* tit */
+.ipt-tit{
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+}
+.ipt-tit input{
+	border: 1px solid #dfdfdf;
+	width: 70%;
+	height: 30px;
+	border-radius: 4px;
+	padding:0 10px;
+	margin-left: 10px;
+	background: transparent;
+}
+.new-con textarea{
+	height: 200px;
+	vertical-align: top;
+	width:70%;
+	font-size: 12px;
+	border-radius:4px;
+	border: 1px solid #dfdfdf;
+	padding: 10px;
+	background: transparent;
+	margin-left: 10px;
+}
+.textareaPrompt{
+	margin:5px 0  5px 96px;
+	width: 70%;
+	height: 20px;
+	font-size: 12px;
+	color: #525252;
+	text-align: right;
+}
+.new-con span{
+	display: inline-block;
+	height: 100%;
+	width: 70px;
+}
+.new-con p:nth-child(2),
+.new-con p:nth-child(3),
+.new-con p:nth-child(4),
+.new-con p:nth-child(5){
+	margin: 20px 0;
+}
+.new-con p:nth-child(3) input{
+	width: 20%;
+	background: transparent;
+	margin-left: 10px;
+}
+.conts button[type="submit"]{
+    background: #00a2ca none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 22px;
+    cursor: pointer;
+}
+.conts .alert-left{
+	margin-top: 16px;
+}
+.new-con p:nth-child(4) input{
+	height: 32px;
+	border: 1px solid #dfdfdf;
+	padding: 0 5px;
+	border-radius: 4px;
+}
+/* 显示位置 */
+.new-con p:nth-child(5) select{
+	height: 32px;
+	border-radius: 4px;
+	background: transparent;
+	border: 1px solid #dfdfdf;
+	width: 26%;
+	font-size: 12px;
+	padding-left: 10px;
+}
+.new-con p:nth-child(5) option{
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	padding-left: 10px;
+}
+/* device */
+.all-tab{
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+	height: 400px;
+}
+#seDevice{
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	width: 80%;
+	height: 32px;
+	background: transparent;
+}
+#show{
+	background: transparent;
+}
+.device{
+	min-width: 400px;
+	height: 360px;
+	height: 400px;
+}
+.device h3{
+	font-size: 14px;
+	font-weight: normal;
+	color:#404040;
+	height: 60px;
+	line-height: 60px;
+	margin-bottom: 20px;
+}
+.publish li{
+	position: relative;
+	padding-left:20px;
+	height: 26px;
+	line-height: 26px;
+}
+.publish a{
+	position: absolute;
+	visibility: hidden;
+	right: 10px;
+	top: 6px;
+	width: 14px;
+	height: 14px;
+	background: url('../../imgs/remove.png') no-repeat;
+	display: inline-block;
+}
+.publish li:hover{
+	background: #dfdfdf;
+}
+.publish li:hover a{
+	visibility: visible;
+}
+.alldevice{
+	height: 26px;
+	line-height: 26px;
+	color: #ccc;
+}
+.active{
+	display: block;
+}
+#all-tab li{
+	cursor: pointer;
+}
+.all-tab > ul{
+	overflow-y: auto;
+	padding: 8px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	width: 80%;
+	height: 310px;
+}
+.deviceGroup > li > ul{
+	display: none;
+}
+.deviceGroup > li > ul > li{
+	padding-left:30px;
+	height: 26px;
+	line-height: 26px;
+}
+.deviceGroup > li > ul > li:hover{
+	background: #eee;
+}
+.deviceGroup p{
+	position: relative;
+}
+.deviceGroup p a{
+	display: inline-block;
+	color: #404040;
+	height: 16px;
+	margin: 6px 0 ;
+	line-height: 16px;
+	padding-left:25px ;
+	background: url('../../imgs/showhideb.png') no-repeat 0 0;
+}
+.deviceGroup p b{
+  position: absolute;
+  display: inline-block;
+  visibility: hidden;
+  top: 8px;
+  right: 0px;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  background: url(../../imgs/add2.png) no-repeat;
+}
+.deviceGroup p:hover b{
+	visibility: visible;
+
+}
+.device .add-img{
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	cursor: pointer;
+	display: none;
+	width: 12px;
+	height: 12px;
+}
+.device .addImg{
+	position: absolute;
+	right: 30px;
+	bottom: 4px;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	display: none;
+}
+.setTime ul{
+	list-style: none;
+	font-size: 12px;
+	color: #525252;
+}
+.setTime ul li{
+	margin-bottom: 40px;
+}
+.time-glb span{
+	float: left;
+	width: 86px;
+}
+.time-glb div{
+	margin-top: 20px;
+}
+.time-glb .laydate-icon{
+	float: left;
+}
+.showposition{
+	margin-right: 10px;
+}

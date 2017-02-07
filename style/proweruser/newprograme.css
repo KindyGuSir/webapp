@@ -1,0 +1,127 @@
+/* 中间内容 */
+.newgrm-con{
+	width: 96%;
+	height: 460px;
+	margin: 0 auto;
+	min-width: 720px;
+}
+/* 添加背景图片 */
+.conbox{
+	margin-top: 50px;
+	margin-left: 10%;
+	width: 40%;
+	height: auto;
+	float: left;
+	height: 100%;
+	position: relative;
+}
+.addImg{
+	position: absolute;
+	left: 40%;
+	margin-left: -150px;
+	width: 300px;
+	height: 300px;
+}
+.addImg img{
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+}
+.addImg button{
+	margin-top: 40px;
+	margin-left: 78px;
+	padding: 0 30px;
+	border-radius: 3px;
+
+	line-height: 30px;
+	height: 30px;
+}
+
+/* 节目表单 */
+.protab{
+	width: 450px;
+	min-width:360px;
+	font-size: 12px;
+	height: 400px;
+}
+.newgrm-con .protab div:nth-child(3) p{
+	display: inline-block;
+	display: none;
+	line-height: 32px;
+	height: 32px;
+	width: 410px;
+	margin-left: 124px;
+}
+.newgrm-con .protab div:nth-child(3) .hideinput{
+	border-radius: 3px;
+	border:1px solid #ccc;
+	padding-left: 10px;
+	height: 32px;
+	width: 100px;
+}
+.newgrm-con .protab div:nth-child(3) select{
+	width: 60%;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	background: transparent;
+	height: 32px;
+	padding-left: 10px;
+}
+.newgrm-con .protab div:nth-child(3) select option{
+	padding-top: 6px;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.newgrm-con .protab div > input{
+	box-sizing: border-box;
+	padding-left: 5px;
+	width: 60%;
+	height: 32px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background: transparent;
+}
+.newgrm-con .protab div > span{
+	display: inline-block;
+	width: 120px;
+	height: 32px;
+}
+.newgrm-con .protab div:nth-child(2) > span{
+	width: 126px;
+}
+.newgrm-con .protab div:nth-child(4) {
+	height: 115px;
+	margin-top: 60px;
+}
+.newgrm-con .protab div{
+	height: 32px;
+	margin-top: 32px;
+}
+.newgrm-con .protab div:nth-child(5) button{
+
+	border-radius: 3px;
+	display: inline-block;
+	margin-left: 124px;
+	background: #6192D6;
+	color: #fff;
+	text-align: center;
+
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  display: inline-block;
+  padding: 0 30px;
+}
+.newgrm-con .protab div:nth-child(1){
+	margin-top: 0;
+}
+.protab textarea{
+	padding: 5px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	border-color: #ccc;
+	width: 60%;
+	height: 110px;
+	vertical-align: top;
+}

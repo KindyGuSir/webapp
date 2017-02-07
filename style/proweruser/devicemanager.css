@@ -1,0 +1,143 @@
+		/* top样式 */
+		.top{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background: #333;
+			z-index: 99999;
+			height: 80px;
+			min-width: 1366px;
+		}
+		.logo{
+			margin-left: 70px;
+			margin-top: 8px;
+		}
+		.logo,.logo h1, img{
+			float: left;
+		}
+		.tit{
+			height: 68px;
+			line-height: 68px;
+			margin-left: 40px;
+			font-weight: normal;
+			color: #fff;
+		}
+		.top-con{
+			height: 80px;
+			position: relative;
+		}
+		.top-tit{
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			color: #fff;
+			font-style: italic;
+			padding-right: 40px;
+		}
+		.singleout{
+			position: absolute;
+			height: 80px;
+			line-height: 80px;
+			right: 0;
+			top: 0;
+			margin-right: 50px;
+			font-size: 14px;
+			color: #8F8F8F;
+		}
+		.selectbtn{
+			position: absolute;
+			top: 40%;
+			left: 90%;
+			margin-left: 20px;
+			cursor: pointer;
+			width: 16px;
+			height: 16px;
+		}
+		.singleOutBox{
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			width: 80px;
+			height: 80px;
+			border: 1px solid #ccc;
+			background: #fff;
+			display: none;
+		}
+		.singleOutBox div{
+			line-height: 26px;
+			text-align: center;
+		}
+		.singleOutBox a{
+			color: #666;
+		}
+		.singleOutBox .outuser{
+			color: #f66666;
+		}
+		/*                       con样式 */
+		.left{
+			width: 268px;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 80px;
+			border-right: 2px solid #828282;
+		}
+		.menu_list div{
+			display: none;
+		}
+		.menu_head{
+			height: 76px;
+			line-height: 76px;
+			padding-left: 32px;
+			font-size: 18px;
+			color: #525252;
+			cursor: pointer;
+			position: relative;
+			margin: 0;
+			font-weight: normal;
+			/* background:  url('../../imgs/pro_add.png') center right no-repeat; */
+			font-family: '微软雅黑';
+		}
+		.menu_head:hover{
+			background: #e9eef1;
+		}
+		.menu_head img{
+			width: 36px;
+			height: 36px;
+			padding-top: 20px;
+			padding-left: 18px;
+			padding-right: 12px;
+		}
+		.menu_body{
+			line-height: 38px;
+			background: #fff;
+		}
+		.menu_body a{
+			display: block;
+			height: 38px;
+			line-height: 38px;
+			color: #777;
+			background: #fff;
+			text-decoration: none;
+			font-size: 14px;
+			text-align: center;
+		}
+		.menu_body a:hover{
+			transition: .5s;
+			-moz-transition: .5s;
+			-webkit-transition: .5s;
+			-o-rotation: .5s;
+			text-decoration: none;
+			background: #f1f1f1;
+		}
+		/* 									right */
+		.right{
+			position: fixed;
+			left: 270px;
+			top: 80px;
+			right: 0;
+			bottom: 0;
+			background: #fff;
+			border-radius: 6px;
+			z-index: 1;
+		}

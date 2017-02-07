@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+<head>
+    <link rel="shortcut icon" href="/ManagementCenter/images/home/title.ico" />
+    <link rel="Bookmark" href="/ManagementCenter/images/home/title.ico" />
+    <title>校园互动视窗</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="css/editor.css" rel="stylesheet" type="text/css"/>
+    <link href="css/editItem.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="./js/common/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<input type="hidden" id="indexportIndex"><!-- 发布时的定时器 -->
+<input type="hidden" id="state" >
+<input type="hidden" id="quick" ><!-- 普通发布  和 快速发布 的区分标志 -->
+<div class="container">
+    <header>
+        <aside>
+            <span onclick="location.href= IWIN.serverIp + '/ManagementCenter/home/Home_login.do'" style="cursor:pointer;" title="返回系统首页"></span>
+            <label onclick="navigateToModule('Project')" style="cursor:pointer;" title="返回节目管理">节目管理</label>
+        </aside>
+        <aside>
+            <ul>
+                <div style="display: inline-block; margin-top: 8px;">
+                    <span style="color:rgb(240,240,240)" id="unam"></span>
+                    <img src="images/iwinhouse.png" style="cursor:pointer" onclick="gohome();" title="返回首页">
+                    <img src="images/iwindestory.png" style="cursor:pointer" onclick="exit()" title="注销">
+                </div>
+            </ul>
+        </aside>
+    </header>
+    <div class='title'>
+        <div class='left-one' >
+            <span>节目制作</span>
+        </div>
+        <div class="master-content-tool">
+            <ul class="firstphoto">
+                <li class="show top_btn_12" title="按钮菜单" id="btn_menu" style="display:none;">
+                    <span style="font-weight: bold;color: white;width:30px">-</span>
+                    <div id="btn_menu_bar" style="display:none;">
+                        <ul >
+                            <li>
+                                <ul>
+                                    <li id="open" class="btn_list_2" _tar="program_open">
+                                        <span></span><label>打开</label><span id="btn_list_2_span"></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li id="cut" class="btn_list_4" _tar="button_cut_blk">
+                                        <span></span><label>剪切</label><span id="btn_list_4_span"></span>
+                                    </li>
+                                    <li id="copy" class="btn_list_5" _tar="button_copy_blk">
+                                        <span></span><label>复制</label><span id="btn_list_5_span"></span>
+                                    </li>
+                                    <li id="paste" class="btn_list_6" _tar="button_paste_blk">
+                                        <span></span><label>粘贴</label><span id="btn_list_6_span"></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li id="preview" class="btn_list_14" _tar="program_preview">
+                                        <span></span><label>预览</label><span id="btn_list_14_span"></span>
+                                    </li>
+
+                                    <li id="publish" class="btn_list_13" _tar="program_publish">
+                                        <span></span><label>发布</label><span id="btn_list_13_span"></span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- 隐藏 -->
+                <li class="show top_btn_9"  style="display: none;background-color: rgb(70,175,75);margin-top:7px;cursor:pointer;margin-left: 13px;"  title="页面分辨率" id="page_ratio">
+                    <span id="defaultrate" style="display: block;">960：540</span>
+                    <div id="page_ratio_bar" style="display:none;left:-9px">
+                        <ul>
+                            <li _val="1080*1920" id="10801920" class="ratio_select" style="text-align: left;">
+                                <label >1080:1920</label><span></span>
+                            </li>
+                            <li _val="768*1366" id="7681366" class="ratio_select" style="text-align: left;">
+                                <label >768:1366</label><span></span>
+                            </li>
+                            <li  _val="1920*1080" id="19201080" class="ratio_select" style="text-align: left;">
+                                <label >1920:1080</label><span></span>
+                            </li>
+                            <li  _val="1366*768" id="1366768" class="ratio_select" style="text-align: left;">
+                                <label >1366:768</label><span></span>
+                            </li>
+                            <li _val="1280*720" id="1280720" class="ratio_select" style="text-align: left;">
+                                <label >1280:720</label><span></span>
+                            </li>
+                            <li  _val="1024*768" id="1024768" class="ratio_select" style="text-align: left;">
+                                <label >1024:768</label><span></span>
+                            </li>
+                            <li  id="page_rate_custom" _val="1000*1000" class="ratio_select" >
+                                <label >自定义</label><span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--   <li class="top_btn_13" style="display: block;margin-top: 9px;cursor:pointer;" title="剪切" id="button_cut_blk"><span style="margin-left: 10px;font-size: 13px;color: white">剪切</span></li>
+                  <li class="top_btn_14" style="display: block;margin-top: 9px;cursor:pointer;"  title="复制" id="button_copy_blk"><span style="margin-left: 10px;font-size: 13px;color: white">复制</span></li>
+                  <li class="top_btn_15" style="display: block;margin-top: 9px;cursor:pointer;"  title="粘贴" id="button_paste_blk"><span style="margin-left: 10px;font-size: 13px;color: white">粘贴</span></li>
+                   -->
+                <li class="top_btn_2" style="display: block;margin-top: 9px;cursor:pointer;"  title="返回列表" id="program_open"><span style="margin-left: 10px;font-size: 13px;color: white">返回</span></li>
+            </ul>
+        </div>
+    </div>
+    <nav>
+        <ul id="comp_group_list"></ul>
+        <!-- <li _tar="comp_panel_1">时间</li>
+        <li class="check" _tar="comp_panel_2">天气</li>
+        <li _tar="comp_panel_3">通知</li>
+        <li _tar="comp_panel_4">图片</li>
+        <li _tar="comp_panel_5">文字图形</li>-->
+        <!--旧版的节目制作    begin  -->
+        <!-- <ul>
+         <li>
+             <ul id="comp_panel_list">
+             </ul>
+         </li>
+         <li></li>
+     </ul>  -->
+        <!-- 旧版的节目制作     end   -->
+        <!-- 新版（点击工具栏的元素小图标，不再是拖拽效果，换成点击效果，如果想还原拖拽效果，请屏蔽此处）的节目制作      begin  -->
+        <div class="indexmaindiv" id="indexmaindiv">
+            <div class="indexmaindiv1" >
+                <div class="stylesgoleft" id="goleft"></div>
+                <div class="photos" id="photos">
+                <ul class="firstphoto" >
+                    <!-- 撤销 -->
+                    <li  title="撤销" id="button_undo">
+                        <span><a href="#"><img src="images/arrowpre.png"/></a></span>
+                        <span class="text">撤销</span>
+                    </li>
+                    <!-- 删除 -->
+                    <li  title="恢复" id="button_redo">
+                        <span><a href="#"><img src="images/arrownext.png"/></a></span>
+                        <span class="text">重做</span>
+                    </li>
+                </ul>
+                <ul class="firstphoto" >
+                    <li  id="button_resource_text">
+                        <span><a href="#"><img src="images/iwintext.png"/></a></span>
+                        <span class="text">文本</span>
+                    </li>
+                    <li id="">
+                    <a href="#">
+                            <label for="upfile_img" style="display: inline-block; width: 32px; height: 32px; overflow:hidden;  background: url(./images/roundsuns.png) no-repeat left center;"></label>
+                            <input type="file" id="upfile_img" style="display: none;">
+                    </a>
+                        <span class="text">图片</span>
+                    </li>
+                    <li id='button_resource_video'>
+                    <a href="#">
+                            <label for="upfile_video" style="display: inline-block; width: 32px; height: 32px; overflow:hidden;  background: url(./images/videon.png) no-repeat left center;"></label>
+                            <input type="file" id="upfile_video" style="display: none;">
+                    </a>
+                            <!-- <img src="./images/videon.png"/> -->
+                        <span class="text">视频</span>
+                    </li>
+                    
+                    <li id='button_resource_ppt'>
+                    <a href="#">
+                            <label for="upfile_ppt" style="display: inline-block; width: 32px; height: 32px; overflow:hidden;  background: url(./images/iwinpptn.png) no-repeat left center;"></label>
+                            <input type="file" id="upfile_ppt" style="display: none;">
+                    </a>
+                        <span class="text">PPT</span>
+                    </li>
+                    <li id='button_resource_flash'>
+                    <a href="#">
+                            <label for="upfile_flash" style="display: inline-block; width: 32px; height: 32px; overflow:hidden;  background: url(./images/iwinflashn.png) no-repeat left center;"></label>
+                            <input type="file" id="upfile_flash" style="display: none;">
+                    </a>
+                        <span class="text">Flash</span>
+                    </li>
+                    
+                </ul>
+                <ul class="firstphoto" >
+                    <li id='button_resource_rectangle'><a href="#"><img src="images/iwinrectangle.png"/></a>
+                        <span class="text">矩形</span>
+                    </li>
+                    <li id='button_resource_horizontaline'><a href="#"><img src="images/iwinline.png"/></a>
+                        <span class="text">横线</span>
+                    </li>
+                    <li id='button_resource_verticalline'><a href="#"><img src="images/iwinverticalline.png"/></a>
+                        <span class="text">竖线</span>
+                    </li>
+                </ul>
+                <ul class="firstphoto">
+                    <li id='button_resource_timen'><a href="#"><img src="images/iwintimen.png"/></a>
+                        <span class="text">时间</span>
+                    </li>
+                    <li id='button_resource_countdown'><a href="#"><img src="images/iwincountdown.png"/></a>
+                        <span class="text">倒计时</span>
+                    </li>
+                    <li id='button_resource_attendance'><a href="#"><img src="images/Checkworkattendance.png"/></a>
+                        <span class="text">考勤表</span>
+                    </li>
+                    <li id='button_resource_rankmoraledu'><a href="#"><img src="images/rankmoraledusmall.png"/></a><!--add by caoqian 德育排名 20160711-->
+                        <span class="text">德育排名</span>
+                    </li>
+                    
+                </ul>
+
+                <ul>
+                    <!-- 宽高  -->
+                    <li>
+                        <div class="boxxy">
+                            <p><span>x :</span><input type="text"></p>
+                            <p><span>y :</span><input type="text"></p>
+                        </div>
+                        <div class="boxwh">
+                            <a href="javascript:" class="bindwh"></a>
+                            <p><span>w :</span><input type="text"></p>
+                            <p><span>h :</span><input type="text"></p>
+                        </div>
+                    </li>
+                    <!-- 上一层 下一层  锁定 解锁-->
+                    <li>
+                        <div class="boxud">
+                            <a href="javascript:" class="boxu">上一层</a>
+                            <a href="javascript:" class="boxd">下一层</a>
+                        </div>
+                        <div class="boxud">
+                            <a href="javascript:" class="boxbin">锁定</a>
+                            <a href="javascript:" class="boxubin">解锁</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="stylesgoright" id="goright"></div>
+            </div>
+        </div>
+        <!-- 新版（点击工具栏的元素小图标，不再是拖拽效果，换成点击效果，如果想还原拖拽效果，请屏蔽此处）的节目制作      end  -->
+    </nav>
+    <section>
+        <aside id="page_panel">
+            <div >
+                <section>
+                    <nav>
+                        <ul>
+                            <li class="pg_btn_1" style="cursor:pointer;" title="添加" id="create_page"><span></span></li>
+                            <!-- <li class="pg_btn_2" style="cursor:pointer;" title="复制" id="copy_page"><span></span></li> -->
+                            <li class="pg_btn_3" style="cursor:pointer;" title="删除" id="delete_page"><span></span></li>
+                            <li class="pg_btn_4 pg_btn_p" style="cursor:pointer;" title="更改分辨率" ><span></span></li>
+                        </ul>
+                    </nav>
+                    <comment  id="leftbox"  onselectstart="return false;">
+                        <ul id="left_page_inner" >
+
+                        <li class="item" id="pg_1"><div class="item_inner"><div class="page_img" style="background: none;"><canvas width="240"
+
+height="240" style="width: 100%; height: 100%;"></canvas></div></div><div class="page_footer"><span>1</span><img
+
+class="page_pre" id="1" src="images/iwinhide.png"><div class="page_time"><div class="page_time_set"></div><input
+
+class="page_time_edit" id="timeinput1" type="text"><label>秒</label></div></div></li>
+<li class="item" id="pg_1"><div class="item_inner"><div class="page_img" style="background: none;"><canvas width="240"
+
+height="240" style="width: 100%; height: 100%;"></canvas></div></div><div class="page_footer"><span>1</span><img
+
+class="page_pre" id="1" src="images/iwinhide.png"><div class="page_time"><div class="page_time_set"></div><input
+
+class="page_time_edit" id="timeinput1" type="text"><label>秒</label></div></div></li>
+
+
+
+
+
+
+
+                        </ul>
+                        <div class="drag_hint" id="page_drag_hint"></div>
+                    </comment>
+                </section>
+                <section>
+                    <div  id="page_panel_opr_btn"><span></span></div>
+                </section>
+            </div>
+        </aside>
+        <article id="mainb">
+            <div class="main" id="main_box">
+                <div class="inner" id="main_box_inner"></div>
+                <div class="baseline_horizontal" id="baseline_horizontal_1"></div>
+                <div class="baseline_horizontal" id="baseline_horizontal_2"></div>
+                <div class="baseLine_vertical" id="baseLine_vertical_1"></div>
+                <div class="baseLine_vertical" id="baseLine_vertical_2"></div>
+            </div>
+        </article>
+        <aside  id="prpt_panel">
+            <div>
+                <section>
+                    <div id="prpt_panel_opr_btn"><span></span></div>
+                </section>
+                <section>
+                    <comment id="property_bar">
+                        <iframe id="iframe" src="" width="100%" height="100%">
+                        </iframe>
+                    </comment>
+                </section>
+            </div>
+        </aside>
+    </section>
+</div>
+
+<div class="editEle_mask" id="editEle_mask_1"  style="display: none;">
+    <div class="editEle_TL_resize"></div>
+    <div class="editEle_T_resize"></div>
+    <div class="editEle_TR_resize"></div>
+    <div class="editEle_L_resize"></div>
+    <div class="editEle_BL_resize"></div>
+    <div class="editEle_B_resize"></div>
+    <div class="editEle_R_resize"></div>
+    <div class="editEle_BR_resize"></div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="200" width="200"
+     class="editEle_mask" id="editEle_mask_2" style="position:absolute;overflow: visible;display: none;" pointer-events="none">
+    <g fill="gray">
+        <circle cx="0" cy="0" r="3" pointer-events="all" class="editEle_TL_resize"></circle>
+        <circle cx="50%" cy="0" r="3" pointer-events="all"  class="editEle_T_resize"></circle>
+        <circle cx="100%" cy="0" r="3" pointer-events="all"  class="editEle_TR_resize"></circle>
+        <circle cx="0" cy="50%" r="3" pointer-events="all"  class="editEle_L_resize"></circle>
+        <circle cx="0" cy="100%" r="3" pointer-events="all"  class="editEle_BL_resize"></circle>
+        <circle cx="50%" cy="100%" r="3" pointer-events="all"  class="editEle_B_resize"></circle>
+        <circle cx="100%" cy="50%" r="3" pointer-events="all"  class="editEle_R_resize"></circle>
+        <circle cx="100%" cy="100%" r="3" pointer-events="all"  class="editEle_BR_resize"></circle>
+    </g>
+</svg>
+<div class="ctrlEle_mask" id="ctrlEle_mask" style="display: none;">
+</div>
+<div class="deleted_els" id="deleted_els" style="display: none;">
+</div>
+<div class="deleted_pgs" id="deleted_pgs" style="display: none"></div>
+<div class="cut_els" id="cut_els" style="display: none;">
+</div>
+<div id="mylayer" class="mylayer" style="display:none;position:absolute;z-index:10000">
+    <table id="layertable" class="layerTable" >
+        <tr id="row0">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">剪切</td>
+        </tr>
+        <tr id="row1">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">复制</td>
+        </tr>
+        <tr id="row2">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">粘贴</td>
+        </tr>
+        <tr id="row3">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">置顶</td>
+        </tr>
+        <tr id="row4">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">置底</td>
+        </tr>
+        <tr id="row5">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">上移一层</td>
+        </tr>
+        <tr id="row6">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">下移一层</td>
+        </tr>
+        <tr id="row7">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">删除</td>
+        </tr>
+        <!--   【普通节目编辑页面的   右键 锁定 解锁 功能  如需增加功能 放开屏蔽】 -->
+        <tr id="row8">
+             <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">锁定</td>
+         </tr>
+         <tr id="row9">
+             <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">解锁</td>
+         </tr>
+    </table>
+</div>
+<!--【普通节目编辑页面  部件在呗锁定的状态下     右键的 锁定 解锁 功能   如需增加功能 放开屏蔽】
+<div id="mylayerLock" class="mylayer" style="display:none;position:absolute;z-index:10000">
+    <table id="layerLocktable" class="layerTable" >
+
+        <tr id="row10">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">锁定</td>
+        </tr>
+        <tr id="row11">
+            <td style="cursor:pointer;" class="mouseOutStyle" onmouseover="this.className='mouseOverStyle'" onmouseout="this.className='mouseOutStyle'">解锁</td>
+        </tr>
+    </table>
+</div>
+ -->
+<script>
+    var IWIN = {};
+</script>
+<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/util/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/util/makeId.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/accessor/leftMenu.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/request/request.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/options.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/Align.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/dialog.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/dedialog.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/templatedialog.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/pageratedialog.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/Level.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAdd.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockMove.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockResize.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockMvAndRs.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockPrptChange.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockSrcChange.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockSrcChangeQui.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockDel.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockCut.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockPaste.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockCopy.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAlignTop.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAlignBottom.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAlignLeft.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAlignRight.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAlignHorizontal.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAlignVertical.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockLock.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockUnlock.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/instructions/INSPageCreate.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSPageDelete.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSPageSelect.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSPageMove.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSPageCopy.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSPageUpdateTime.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/instructions/INSBlockLevelTop.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockLevelBottom.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockLevelMoveDown.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockLevelMoveUp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSProgramSize.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSAddrsrc.js" type="text/javascript" charset="utf-8"></script>
+<!-- zhanghongbin add linkconstitute -->
+<script src="js/instructions/INSAddRlink.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSAddRback.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/constitute/CompClass.js" type="text/javascript" charset="utf-8"></script>
+<!-- zhanghongbin add linkconstitute -->
+<script src="js/constitute/ConLinkComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConBackComp.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/constitute/ConImgComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConVideoComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConRectComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConAccordionComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConTextComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConText2Comp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConHorizonLineComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConVerticalLineComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConWanderComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConImageSwipeComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConImgs3D.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConFlashComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConPPTComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConWebPageComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConStreamingComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConEWorksComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConTimeComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConWeatherComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/CourseListComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/CountdownComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConEditComponent.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConClassdynamicsComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConNoticeComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConAttendanceComp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/constitute/ConActivityComp.js" type="text/javascript" charset="utf-8"></script> <!--add by haoyc 班级活动 20160602-->
+<script src="js/constitute/ConHonorComp.js" type="text/javascript" charset="utf-8"></script> <!--add by haoyc 班级荣誉 20160627-->
+<script src="js/constitute/ConUdefinedComp.js" type="text/javascript" charset="utf-8"></script> <!--add by haoyc 自定义组件 20160704-->
+<script src="js/constitute/ConRankmoraleduComp.js" type="text/javascript" charset="utf-8"></script> <!--add by caoqian 德育排名 20160711-->
+<script src="js/constitute/ConTaskComp.js" type="text/javascript" charset="utf-8"></script> <!--add by haoyc 作业布置 20160712-->
+<script src="js/constitute/ConNewAttendanceComp.js" type="text/javascript" charset="utf-8"></script> <!--add by haoyc 班级考勤 20160727-->
+
+
+<script src="js/instructions/Command.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/baseline.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/BlockOpr.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/menuTree.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/view/PageOpr.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/html2canvas.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- 以下的14个js的引入,是新版（点击工具栏的元素小图标，不再是拖拽效果，换成点击效果，如果想还原拖拽效果，请屏蔽此处）的节目制作      begin  -->
+<script src="js/instructions/INSBlockAddText.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddFlowvideo.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddWeb.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddRectangle.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddHorizontaline.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddVerticalline.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/instructions/INSBlockAddPinao.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddWander.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddSwepe.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddPpt.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAdd3D.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/instructions/INSBlockAddTime.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddWeather.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddGoodplay.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddCurricula.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddCountdown.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddClassdynamics.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddNotice.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddAttendance.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/instructions/INSBlockAddActivity.js" type="text/javascript" charset="utf-8"></script><!--add by haoyc 班级活动 20160602-->
+<script src="js/instructions/INSBlockAddHonor.js" type="text/javascript" charset="utf-8"></script><!--add by haoyc 班级荣誉 20160627-->
+<script src="js/instructions/INSBlockAddUdefined.js" type="text/javascript" charset="utf-8"></script><!--add by haoyc 自定义组件 20160704-->
+<script src="js/instructions/INSBlockAddRankmoraledu.js" type="text/javascript" charset="utf-8"></script><!--add by caoqian 德育排名 20160711-->
+<script src="js/instructions/INSBlockAddTask.js" type="text/javascript" charset="utf-8"></script><!--add by haoyc 作业布置 20160712-->
+<script src="js/instructions/INSBlockAddNewAttendance.js" type="text/javascript" charset="utf-8"></script><!--add by haoyc 班级考勤 20160727-->
+
+<!--  以上的14个js的引入,是新版（点击工具栏的元素小图标，不再是拖拽效果，换成点击效果，如果想还原拖拽效果，请屏蔽此处）的节目制作      begin  -->
+
+
+<!--<script type="text/javascript"
+        src="./js/common/extends/easyui-extends.js">
+</script>-->
+
+<script>
+    var si = 0;
+    //树目录生成
+    IWIN.LeftMenuAcr.getData(function(acr){
+        /* 负责加载 三个标签页  ：开始， 图片秀，  插件      --> 如果想还原拖拽效果请放开此处
+         var leftMenuTree = new MenuTree(IWIN.Options.eID.leftMenuBox,acr);
+         leftMenuTree.init();*/
+
+        IWIN.util.loadJS(['./js/view/Frame.js'],true);
+
+        IWIN.Request.getProgramReq(IWIN.Options.cur.program,function(rs)
+        {
+            IWIN.util.loadJS(['./js/view/Frame.js'],true);
+
+            // 分辨率的设置
+            var v=getUrlParameter('username');
+            var pagerate=getUrlParameter('proresolution');
+            var state=getUrlParameter('state');
+            var quick=getUrlParameter('quick');
+            document.getElementById("unam").innerText=v;
+            document.getElementById("page_rate_custom").setAttribute("_val",pagerate);
+            document.getElementById("defaultrate").innerHTML=pagerate;
+            document.getElementById("state").value=state;
+            document.getElementById("quick").value=quick;
+
+            var strs = pagerate.split(':');
+            if(strs[0]=='1080' && strs[1]=='1920'){
+            }else if(strs[0]=='768' && strs[1]=='1366'){
+            }else if(strs[0]=='1920' && strs[1]=='1080'){
+            }else if(strs[0]=='1366' && strs[1]=='768'){
+            }else if(strs[0]=='1280' && strs[1]=='720'){
+            }else if(strs[0]=='1024' && strs[1]=='768'){
+            }else{
+                document.getElementById("page_rate_custom").className="check ratio_select";
+            }
+        });
+
+    });
+    //返回节目列表
+    function navigateToModule(urlPath) {
+        top.location.href = IWIN.serverIp + '/ManagementCenter/'
+        + urlPath.toLowerCase() + '/' + urlPath + '_home.do?module='
+        + urlPath;
+    }
+    document.body.onselectstart = document.body.oncontextmenu=  function(){ return false;}
+    function exit() {
+        var r=confirm("您确定要退出系统吗?");
+        if (r==true){
+            window.location.href = IWIN.serverIp + '/ManagementCenter/home/Home_logout.do';
+        }
+    }
+    function gohome() {
+        window.location.href = IWIN.serverIp + '/ManagementCenter/home/Home_login.do';
+    }
+    // 右上角的用户信息显示
+    function getUrlParameter( name ){
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec(window.parent.location.href );
+        if(results == null)return "";
+        else {
+            return results[1];
+        }
+    }
+
+    /*导航栏滚动开始*/
+    window.onload = function () {
+        var oBtnLeft = document.getElementById("goleft");
+        var oBtnRight = document.getElementById("goright");
+        var oDiv = document.getElementById("indexmaindiv");
+        var oUl = oDiv.getElementsByTagName("ul");
+        oBtnRight.onclick = function () {//右侧按钮
+            for(var i=oUl.length-1;i>=0;i--){
+                if(getStyle(oUl[i],"display")=="none"){
+                    oUl[i].style.display="block";
+                    break;
+                }
+            }
+        }
+        oBtnLeft.onclick = function () {//左侧按钮
+            for(var i=0;i<oUl.length-1;i++){
+                if(getStyle(oUl[i],"display")=="block"){
+                    oUl[i].style.display="none";
+                    break;
+                }
+            }
+        }
+    };
+
+    function getStyle(obj, name) {
+        if (obj.currentStyle) {
+            return obj.currentStyle[name];
+        }
+        else {
+            return getComputedStyle(obj, false)[name];
+        }
+    }
+    /*导航栏滚动结束*/
+</script>
+
+
+</body>
+</html>

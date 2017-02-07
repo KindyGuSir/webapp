@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园信息展示系统-节目制作</title>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/html2canvas.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+		html, body 
+		{
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		ul 
+		{
+			float: left;
+			list-style: none;
+			height: 77px;
+			display: inline-block;
+			padding-right: 16px;
+		}
+		ul li 
+		{
+			/*background: #fff;*/
+			align-content:center;
+			display: inline;
+			list-style: none;
+			float: left;
+			margin: 14px 2px 0px 10px;
+			padding: 0;
+			text-align: center;
+			color: #000;/*border: 1px solid #ccc;*/
+		}
+		ul li span
+		{
+			display:block;
+		}
+		ul li img
+		{
+			display:block;
+		}
+		span.font_size_12px
+		{
+			font-size: 12px;
+		}
+</style>
+
+</head>
+<body onselectstart="return false" style="width:100%;height:100%" >
+<div align="center" id="main" style="width:100%;height:100%">
+	<div id="top" style="background-color:#00F;width:100%;height:15%"></div>
+    <div style="width:100%;height:85%" >
+    	<div style="background-color:#0F0;width:15%;height:100%; float:left;padding-top:20px;">
+            <ul class="firstphoto" >
+                <li  id="button_resource_text"><span><a href="#"><img src="./images/text.png"/></a></span>
+                    <span class="text">文本</span>
+                </li>
+                <li id="button_resource_image">
+                    <span><a href="#"><img src="./images/roundsun.png"/></a></span>
+                    <span class="font_size_12px">图片</span>
+                </li>
+                <li id="button_resource_link" style="display: none"><span><a href="#"><img src="./images/link.png"/></a></span>
+                    <span class="font_size_12px">链接</span>
+                </li>
+                <li id="button_resource_back"  style="display: none"><span><a href="#"><img src="./images/goback.png"/></a></span>
+                    <span class="font_size_12px">后退</span>
+                </li>
+                <li id='button_resource_ppt'><span><a href="#"><img src="./images/pptn.png"/></a></span>
+                    <span class="font_size_12px">PPT</span>
+                </li>
+                <li id='button_resource_flash'><a href="#"><img src="./images/flashn.png"/></a>
+                    <span class="font_size_12px">Flash</span>
+                </li>
+                <li id='button_resource_video'><a href="#"><img src="./images/videon.png"/></a>
+                    <span class="font_size_12px">视频</span>
+                </li>
+                <li id='button_resource_flowvideo'><span><a href="#"><img src="./images/flowvideo.png"/></a></span>
+                    <span class="font_size_12px">直播</span>
+                </li>
+                <li id='button_resource_webn'><a href="#"><img src="./images/webn.png"/></a>
+                    <span class="font_size_12px">网页</span>
+                </li>
+                <li id='button_resource_rectangle'><a href="#"><img src="./images/rectangle.png"/></a>
+                    <span class="font_size_12px">矩形</span>
+                </li>
+                <li id='button_resource_horizontaline'><a href="#"><img src="./images/horizontaline.png"/></a>
+                    <span class="font_size_12px">横线</span>
+                </li>
+                <li id='button_resource_verticalline'><a href="#"><img src="./images/verticalline.png"/></a>
+                    <span class="font_size_12px">竖线</span>
+                </li>
+            </ul>
+        	
+        </div>
+    	<div style="background-color:#FFF;width:85%;height:100%;float:right;overflow:auto" id="main_box" >
+        	<div id="main_box_inner" style="background-color:#000;width:1920px;height:1080px">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/zoption.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/zutil.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    var CAMPUS = {};
+	    for(var btn in CAMPUS.Options.btn){
+        if(!util.byId(btn))continue;
+        (function(b){
+            CAMPUS.util.events(CAMPUS.util.byId(b),'click',function(){
+                IWIN.Controller.execute(IWIN.Options.btn[b]);
+            })
+        })(btn);
+    }
+</script>
+
+</body>
+</html>

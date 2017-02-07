@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* 弹框样式 */
+.alertBox{
+	width: 674px;
+	height: 483px;
+	background: #fff;
+}
+.alert-tit{
+	border-radius: 6px;
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	background: #f2f6fd;
+	border-bottom: 1px solid #e8e8e8;
+}
+.alert-tit h3{
+	font-weight: normal;
+	font-size: 16px;
+	float: left;
+	padding-left: 20px;
+}
+.alert-left .addall,.alert-left .moveall{
+	font-size: 12px;
+	color: #6192D6;
+}
+.alert-left .addall:hover,.alert-left .moveall:hover{
+	text-decoration: none;
+}
+.alert-tit img{
+	float: right;
+	vertical-align: middle;
+	margin: 16px;
+	cursor: pointer;
+}
+.alert-con{
+	height: 370px;
+	padding: 22px;
+}
+.alert-left li:hover{
+	background: rgb(238,238,238);
+}
+.alert-left{
+	width: 370px;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+.left-one{
+	float: left;
+	width: 160px;
+	height: 100%;
+}
+.left-search{
+	position: relative;
+}
+.left-search img{
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.left-one input{
+	width: 94%;
+	height: 28px;
+	border: 1px solid #ccc;
+	background: transparent;
+	padding-left: 10px
+}
+.right-device,.left-device{
+	height: 310px;
+	margin-top: 10px;
+	background: #f2f6fd;
+	overflow: auto;
+}
+.uls li ,.devices li{
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	cursor: pointer;
+	color: #525252;
+	padding-left: 10px;
+	position: relative;
+}
+.devices li a{
+	visibility: hidden;
+	position: absolute;
+	display: inline-block;
+	right: 10px;
+	top: 7px;
+	width: 14px;
+	height: 14px;
+	background: url('../../imgs/remove.png') no-repeat;
+}
+.devices li:hover a{
+	visibility: visible;
+}
+.alert-left a{
+	font-size: 14px;
+}
+.left-two{
+	float: right;
+	width: 160px;
+	height: 100%;
+}
+.left-two h3{
+	font-weight: normal;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	color: #525252;
+}
+.right-jt{
+	position: absolute;
+	top: 40%;
+	left: 46%;
+	cursor: pointer;
+}
+/* 右侧时间策略 */
+.alert-right{
+	float: right;
+	width: 220px;
+	height: 100%;
+
+}
+.alert-right h3{
+	font-weight: normal;
+	font-size: 16px;
+	color: #525252;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+.timeEnd,.timeBegin{
+	font-size: 12px;
+	position: relative;
+}
+.timeEnd img,.timeBegin img{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	top: 2px;
+}
+.timeEnd{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.timeEnd span,.timeBegin span{
+	padding-right: 10px;
+}
+.timeEnd input,.timeBegin input{
+	padding-left: 4px;
+}
+.begin-t,.end-t{
+	font-size: 12px;
+}
+.begin-t span,.end-t span{
+	float: left;
+}
+.btn a:hover{
+	text-decoration: none;
+}
+.btn .delete{
+	float: right;
+}
+.btn .enter{
+	float: right;
+	margin-right: 20px;
+}
+.begin,.end{
+	font-size: 12px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.begin input, .end input{
+	width: 102px;
+}
+.begin img, .end img{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	cursor: pointer;
+}
+.daily{
+	font-size: 12px;
+	margin-bottom: 10px;
+	color: #525252;
+}
+.daily span{
+	float: right;
+	padding-right: 40px;
+}
+.setTime ul{
+	list-style: none;
+	font-size: 12px;
+	color: #525252;
+}
+.setTime ul li{
+	margin-bottom: 40px;
+}
